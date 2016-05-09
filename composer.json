@@ -1,5 +1,5 @@
 {
-	"name": "thomasphansen/Bring",
+	"name": "spysystem/bring",
 	"description": "PHP library for Bring Web Services",
 	"license": "proprietary",
 	"require": {
