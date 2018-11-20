@@ -1,105 +1,121 @@
 <?php
-
 namespace Bring;
 
+use DateTime;
+use Exception;
+
+/**
+ * Class PickupConfirmationType
+ */
 class PickupConfirmationType
 {
 
-    /**
-     * @var string $status
-     */
-    protected $status = null;
+	/**
+	 * @var string $status
+	 */
+	protected $status;
 
-    /**
-     * @var \DateTime $earliestPickupDate
-     */
-    protected $earliestPickupDate = null;
+	/**
+	 * @var DateTime $earliestPickupDate
+	 */
+	protected $earliestPickupDate;
 
-    /**
-     * @var \DateTime $latestPickupDate
-     */
-    protected $latestPickupDate = null;
+	/**
+	 * @var null|DateTime $latestPickupDate
+	 */
+	protected $latestPickupDate;
 
-    /**
-     * @param string $status
-     * @param \DateTime $earliestPickupDate
-     * @param \DateTime $latestPickupDate
-     */
-    public function __construct($status, \DateTime $earliestPickupDate, \DateTime $latestPickupDate)
-    {
-      $this->status = $status;
-      $this->earliestPickupDate = $earliestPickupDate->format(\DateTime::ATOM);
-      $this->latestPickupDate = $latestPickupDate->format(\DateTime::ATOM);
-    }
+	/**
+	 * @param string $status
+	 * @param DateTime $earliestPickupDate
+	 */
+	public function __construct(string $status, DateTime $earliestPickupDate)
+	{
+		$this->status = $status;
+		$this->earliestPickupDate = $earliestPickupDate->format(DateTime::ATOM);
+	}
 
-    /**
-     * @return string
-     */
-    public function getStatus()
-    {
-      return $this->status;
-    }
+	/**
+	 * @return string
+	 */
+	public function getStatus(): ?string
+	{
+		return $this->status;
+	}
 
-    /**
-     * @param string $status
-     * @return \Bring\PickupConfirmationType
-     */
-    public function setStatus($status)
-    {
-      $this->status = $status;
-      return $this;
-    }
+	/**
+	 * @param string $status
+	 * @return PickupConfirmationType
+	 */
+	public function setStatus(string $status): PickupConfirmationType
+	{
+		$this->status = $status;
+		return $this;
+	}
 
-    /**
-     * @return \DateTime
-     */
-    public function getEarliestPickupDate()
-    {
-      if ($this->earliestPickupDate == null) {
-        return null;
-      } else {
-        try {
-          return new \DateTime($this->earliestPickupDate);
-        } catch (\Exception $e) {
-          return false;
-        }
-      }
-    }
+	/**
+	 * @return DateTime
+	 */
+	public function getEarliestPickupDate(): ?DateTime
+	{
+		if ($this->earliestPickupDate === null)
+		{
+			return null;
+		}
+		try
+		{
+			return new DateTime($this->earliestPickupDate);
+		}
+		catch (Exception $oException)
+		{
+			return null;
+		}
+	}
 
-    /**
-     * @param \DateTime $earliestPickupDate
-     * @return \Bring\PickupConfirmationType
-     */
-    public function setEarliestPickupDate(\DateTime $earliestPickupDate)
-    {
-      $this->earliestPickupDate = $earliestPickupDate->format(\DateTime::ATOM);
-      return $this;
-    }
+	/**
+	 * @param DateTime $earliestPickupDate
+	 * @return PickupConfirmationType
+	 */
+	public function setEarliestPickupDate(DateTime $earliestPickupDate): PickupConfirmationType
+	{
+		$this->earliestPickupDate = $earliestPickupDate->format(DateTime::ATOM);
+		return $this;
+	}
 
-    /**
-     * @return \DateTime
-     */
-    public function getLatestPickupDate()
-    {
-      if ($this->latestPickupDate == null) {
-        return null;
-      } else {
-        try {
-          return new \DateTime($this->latestPickupDate);
-        } catch (\Exception $e) {
-          return false;
-        }
-      }
-    }
+	/**
+	 * @return null|DateTime
+	 */
+	public function getLatestPickupDate(): ?DateTime
+	{
+		if ($this->latestPickupDate === null)
+		{
+			return null;
+		}
+		try
+		{
+			return new DateTime($this->latestPickupDate);
+		}
+		catch (Exception $oException)
+		{
+			return null;
+		}
+	}
 
-    /**
-     * @param \DateTime $latestPickupDate
-     * @return \Bring\PickupConfirmationType
-     */
-    public function setLatestPickupDate(\DateTime $latestPickupDate)
-    {
-      $this->latestPickupDate = $latestPickupDate->format(\DateTime::ATOM);
-      return $this;
-    }
+	/**
+	 * @param null|DateTime $latestPickupDate
+	 * @return PickupConfirmationType
+	 */
+	public function setLatestPickupDate(?DateTime $latestPickupDate = null): PickupConfirmationType
+	{
+		if ($latestPickupDate === null)
+		{
+			$this->latestPickupDate = null;
+		}
+		else
+		{
+			$this->latestPickupDate = $latestPickupDate->format(DateTime::ATOM);
+		}
+		return $this;
+	}
 
 }

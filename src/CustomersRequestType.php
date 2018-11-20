@@ -1,14 +1,17 @@
 <?php
-
 namespace Bring;
 
+
+/**
+ * Class CustomersRequestType
+ */
 class CustomersRequestType
 {
 
-    
-    public function __construct()
-    {
-    
-    }
+	
+	public function __construct()
+	{
+	
+	}
 
 }

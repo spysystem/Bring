@@ -1,39 +1,40 @@
 <?php
-
 namespace Bring;
 
+
+/**
+ * Class errors
+ */
 class errors
 {
 
-    /**
-     * @var ErrorResponseType[] $error
-     */
-    protected $error = null;
+	/**
+	 * @var null|ErrorResponseType[] $error
+	 */
+	protected $error;
 
-    /**
-     * @param ErrorResponseType[] $error
-     */
-    public function __construct($error)
-    {
-      $this->error[] = $error;
-    }
+	
+	public function __construct()
+	{
+	
+	}
 
-    /**
-     * @return ErrorResponseType[]
-     */
-    public function getError()
-    {
-      return $this->error;
-    }
+	/**
+	 * @return null|ErrorResponseType[]
+	 */
+	public function getError(): ?array
+	{
+		return $this->error;
+	}
 
-    /**
-     * @param ErrorResponseType[] $error
-     * @return \Bring\errors
-     */
-    public function setError($error)
-    {
-      $this->error = $error;
-      return $this;
-    }
+	/**
+	 * @param null|ErrorResponseType[] $error
+	 * @return errors
+	 */
+	public function setError(?array $error = null): errors
+	{
+		$this->error = $error;
+		return $this;
+	}
 
 }

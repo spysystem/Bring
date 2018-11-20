@@ -1,164 +1,165 @@
 <?php
-
 namespace Bring;
 
+
+/**
+ * Class pickupAddress
+ */
 class pickupAddress
 {
 
-    /**
-     * @var string $street
-     */
-    protected $street = null;
+	/**
+	 * @var string $street
+	 */
+	protected $street;
 
-    /**
-     * @var string $postalCode
-     */
-    protected $postalCode = null;
+	/**
+	 * @var string $postalCode
+	 */
+	protected $postalCode;
 
-    /**
-     * @var string $email
-     */
-    protected $email = null;
+	/**
+	 * @var string $email
+	 */
+	protected $email;
 
-    /**
-     * @var string $phoneNumber
-     */
-    protected $phoneNumber = null;
+	/**
+	 * @var string $phoneNumber
+	 */
+	protected $phoneNumber;
 
-    /**
-     * @var string $city
-     */
-    protected $city = null;
+	/**
+	 * @var string $city
+	 */
+	protected $city;
 
-    /**
-     * @var string $messageToDriver
-     */
-    protected $messageToDriver = null;
+	/**
+	 * @var null|string $messageToDriver
+	 */
+	protected $messageToDriver;
 
-    /**
-     * @param string $street
-     * @param string $postalCode
-     * @param string $email
-     * @param string $phoneNumber
-     * @param string $city
-     * @param string $messageToDriver
-     */
-    public function __construct($street, $postalCode, $email, $phoneNumber, $city, $messageToDriver)
-    {
-      $this->street = $street;
-      $this->postalCode = $postalCode;
-      $this->email = $email;
-      $this->phoneNumber = $phoneNumber;
-      $this->city = $city;
-      $this->messageToDriver = $messageToDriver;
-    }
+	/**
+	 * @param string $street
+	 * @param string $postalCode
+	 * @param string $email
+	 * @param string $phoneNumber
+	 * @param string $city
+	 */
+	public function __construct(string $street, string $postalCode, string $email, string $phoneNumber, string $city)
+	{
+		$this->street = $street;
+		$this->postalCode = $postalCode;
+		$this->email = $email;
+		$this->phoneNumber = $phoneNumber;
+		$this->city = $city;
+	}
 
-    /**
-     * @return string
-     */
-    public function getStreet()
-    {
-      return $this->street;
-    }
+	/**
+	 * @return string
+	 */
+	public function getStreet(): ?string
+	{
+		return $this->street;
+	}
 
-    /**
-     * @param string $street
-     * @return \Bring\pickupAddress
-     */
-    public function setStreet($street)
-    {
-      $this->street = $street;
-      return $this;
-    }
+	/**
+	 * @param string $street
+	 * @return pickupAddress
+	 */
+	public function setStreet(string $street): pickupAddress
+	{
+		$this->street = $street;
+		return $this;
+	}
 
-    /**
-     * @return string
-     */
-    public function getPostalCode()
-    {
-      return $this->postalCode;
-    }
+	/**
+	 * @return string
+	 */
+	public function getPostalCode(): ?string
+	{
+		return $this->postalCode;
+	}
 
-    /**
-     * @param string $postalCode
-     * @return \Bring\pickupAddress
-     */
-    public function setPostalCode($postalCode)
-    {
-      $this->postalCode = $postalCode;
-      return $this;
-    }
+	/**
+	 * @param string $postalCode
+	 * @return pickupAddress
+	 */
+	public function setPostalCode(string $postalCode): pickupAddress
+	{
+		$this->postalCode = $postalCode;
+		return $this;
+	}
 
-    /**
-     * @return string
-     */
-    public function getEmail()
-    {
-      return $this->email;
-    }
+	/**
+	 * @return string
+	 */
+	public function getEmail(): ?string
+	{
+		return $this->email;
+	}
 
-    /**
-     * @param string $email
-     * @return \Bring\pickupAddress
-     */
-    public function setEmail($email)
-    {
-      $this->email = $email;
-      return $this;
-    }
+	/**
+	 * @param string $email
+	 * @return pickupAddress
+	 */
+	public function setEmail(string $email): pickupAddress
+	{
+		$this->email = $email;
+		return $this;
+	}
 
-    /**
-     * @return string
-     */
-    public function getPhoneNumber()
-    {
-      return $this->phoneNumber;
-    }
+	/**
+	 * @return string
+	 */
+	public function getPhoneNumber(): ?string
+	{
+		return $this->phoneNumber;
+	}
 
-    /**
-     * @param string $phoneNumber
-     * @return \Bring\pickupAddress
-     */
-    public function setPhoneNumber($phoneNumber)
-    {
-      $this->phoneNumber = $phoneNumber;
-      return $this;
-    }
+	/**
+	 * @param string $phoneNumber
+	 * @return pickupAddress
+	 */
+	public function setPhoneNumber(string $phoneNumber): pickupAddress
+	{
+		$this->phoneNumber = $phoneNumber;
+		return $this;
+	}
 
-    /**
-     * @return string
-     */
-    public function getCity()
-    {
-      return $this->city;
-    }
+	/**
+	 * @return string
+	 */
+	public function getCity(): ?string
+	{
+		return $this->city;
+	}
 
-    /**
-     * @param string $city
-     * @return \Bring\pickupAddress
-     */
-    public function setCity($city)
-    {
-      $this->city = $city;
-      return $this;
-    }
+	/**
+	 * @param string $city
+	 * @return pickupAddress
+	 */
+	public function setCity(string $city): pickupAddress
+	{
+		$this->city = $city;
+		return $this;
+	}
 
-    /**
-     * @return string
-     */
-    public function getMessageToDriver()
-    {
-      return $this->messageToDriver;
-    }
+	/**
+	 * @return null|string
+	 */
+	public function getMessageToDriver(): ?string
+	{
+		return $this->messageToDriver;
+	}
 
-    /**
-     * @param string $messageToDriver
-     * @return \Bring\pickupAddress
-     */
-    public function setMessageToDriver($messageToDriver)
-    {
-      $this->messageToDriver = $messageToDriver;
-      return $this;
-    }
+	/**
+	 * @param null|string $messageToDriver
+	 * @return pickupAddress
+	 */
+	public function setMessageToDriver(?string $messageToDriver = null): pickupAddress
+	{
+		$this->messageToDriver = $messageToDriver;
+		return $this;
+	}
 
 }

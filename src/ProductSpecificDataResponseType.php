@@ -1,64 +1,63 @@
 <?php
-
 namespace Bring;
 
+
+/**
+ * Class ProductSpecificDataResponseType
+ */
 class ProductSpecificDataResponseType
 {
 
-    /**
-     * @var string $upsShipmentNumber
-     */
-    protected $upsShipmentNumber = null;
+	/**
+	 * @var null|string $upsShipmentNumber
+	 */
+	protected $upsShipmentNumber;
 
-    /**
-     * @var string $upsTrackingNumber
-     */
-    protected $upsTrackingNumber = null;
+	/**
+	 * @var null|string $upsTrackingNumber
+	 */
+	protected $upsTrackingNumber;
 
-    /**
-     * @param string $upsShipmentNumber
-     * @param string $upsTrackingNumber
-     */
-    public function __construct($upsShipmentNumber, $upsTrackingNumber)
-    {
-      $this->upsShipmentNumber = $upsShipmentNumber;
-      $this->upsTrackingNumber = $upsTrackingNumber;
-    }
+	
+	public function __construct()
+	{
+	
+	}
 
-    /**
-     * @return string
-     */
-    public function getUpsShipmentNumber()
-    {
-      return $this->upsShipmentNumber;
-    }
+	/**
+	 * @return null|string
+	 */
+	public function getUpsShipmentNumber(): ?string
+	{
+		return $this->upsShipmentNumber;
+	}
 
-    /**
-     * @param string $upsShipmentNumber
-     * @return \Bring\ProductSpecificDataResponseType
-     */
-    public function setUpsShipmentNumber($upsShipmentNumber)
-    {
-      $this->upsShipmentNumber = $upsShipmentNumber;
-      return $this;
-    }
+	/**
+	 * @param null|string $upsShipmentNumber
+	 * @return ProductSpecificDataResponseType
+	 */
+	public function setUpsShipmentNumber(?string $upsShipmentNumber = null): ProductSpecificDataResponseType
+	{
+		$this->upsShipmentNumber = $upsShipmentNumber;
+		return $this;
+	}
 
-    /**
-     * @return string
-     */
-    public function getUpsTrackingNumber()
-    {
-      return $this->upsTrackingNumber;
-    }
+	/**
+	 * @return null|string
+	 */
+	public function getUpsTrackingNumber(): ?string
+	{
+		return $this->upsTrackingNumber;
+	}
 
-    /**
-     * @param string $upsTrackingNumber
-     * @return \Bring\ProductSpecificDataResponseType
-     */
-    public function setUpsTrackingNumber($upsTrackingNumber)
-    {
-      $this->upsTrackingNumber = $upsTrackingNumber;
-      return $this;
-    }
+	/**
+	 * @param null|string $upsTrackingNumber
+	 * @return ProductSpecificDataResponseType
+	 */
+	public function setUpsTrackingNumber(?string $upsTrackingNumber = null): ProductSpecificDataResponseType
+	{
+		$this->upsTrackingNumber = $upsTrackingNumber;
+		return $this;
+	}
 
 }

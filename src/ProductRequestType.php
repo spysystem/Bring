@@ -1,114 +1,182 @@
 <?php
-
 namespace Bring;
 
+
+/**
+ * Class ProductRequestType
+ */
 class ProductRequestType
 {
 
-    /**
-     * @var string $id
-     */
-    protected $id = null;
+	/**
+	 * @var string $id
+	 */
+	protected $id;
 
-    /**
-     * @var string $customerNumber
-     */
-    protected $customerNumber = null;
+	/**
+	 * @var string $customerNumber
+	 */
+	protected $customerNumber;
 
-    /**
-     * @var ServicesRequestType $services
-     */
-    protected $services = null;
+	/**
+	 * @var null|ServicesRequestType $services
+	 */
+	protected $services;
 
-    /**
-     * @var CustomsDeclarationRequestType $customsDeclaration
-     */
-    protected $customsDeclaration = null;
+	/**
+	 * @var null|CustomsDeclarationRequestType $customsDeclaration
+	 */
+	protected $customsDeclaration;
 
-    /**
-     * @param string $id
-     * @param string $customerNumber
-     * @param ServicesRequestType $services
-     * @param CustomsDeclarationRequestType $customsDeclaration
-     */
-    public function __construct($id, $customerNumber, $services, $customsDeclaration)
-    {
-      $this->id = $id;
-      $this->customerNumber = $customerNumber;
-      $this->services = $services;
-      $this->customsDeclaration = $customsDeclaration;
-    }
+	/**
+	 * @var null|string $messageForRecipient
+	 */
+	protected $messageForRecipient;
 
-    /**
-     * @return string
-     */
-    public function getId()
-    {
-      return $this->id;
-    }
+	/**
+	 * @var null|string|whoPaysInvoice $whoPaysInvoice
+	 */
+	protected $whoPaysInvoice;
 
-    /**
-     * @param string $id
-     * @return \Bring\ProductRequestType
-     */
-    public function setId($id)
-    {
-      $this->id = $id;
-      return $this;
-    }
+	/**
+	 * @var null|string|incotermRule $incotermRule
+	 */
+	protected $incotermRule;
 
-    /**
-     * @return string
-     */
-    public function getCustomerNumber()
-    {
-      return $this->customerNumber;
-    }
+	/**
+	 * @param string $id
+	 * @param string $customerNumber
+	 */
+	public function __construct(string $id, string $customerNumber)
+	{
+		$this->id = $id;
+		$this->customerNumber = $customerNumber;
+	}
 
-    /**
-     * @param string $customerNumber
-     * @return \Bring\ProductRequestType
-     */
-    public function setCustomerNumber($customerNumber)
-    {
-      $this->customerNumber = $customerNumber;
-      return $this;
-    }
+	/**
+	 * @return string
+	 */
+	public function getId(): ?string
+	{
+		return $this->id;
+	}
 
-    /**
-     * @return ServicesRequestType
-     */
-    public function getServices()
-    {
-      return $this->services;
-    }
+	/**
+	 * @param string $id
+	 * @return ProductRequestType
+	 */
+	public function setId(string $id): ProductRequestType
+	{
+		$this->id = $id;
+		return $this;
+	}
 
-    /**
-     * @param ServicesRequestType $services
-     * @return \Bring\ProductRequestType
-     */
-    public function setServices($services)
-    {
-      $this->services = $services;
-      return $this;
-    }
+	/**
+	 * @return string
+	 */
+	public function getCustomerNumber(): ?string
+	{
+		return $this->customerNumber;
+	}
 
-    /**
-     * @return CustomsDeclarationRequestType
-     */
-    public function getCustomsDeclaration()
-    {
-      return $this->customsDeclaration;
-    }
+	/**
+	 * @param string $customerNumber
+	 * @return ProductRequestType
+	 */
+	public function setCustomerNumber(string $customerNumber): ProductRequestType
+	{
+		$this->customerNumber = $customerNumber;
+		return $this;
+	}
 
-    /**
-     * @param CustomsDeclarationRequestType $customsDeclaration
-     * @return \Bring\ProductRequestType
-     */
-    public function setCustomsDeclaration($customsDeclaration)
-    {
-      $this->customsDeclaration = $customsDeclaration;
-      return $this;
-    }
+	/**
+	 * @return null|ServicesRequestType
+	 */
+	public function getServices(): ?ServicesRequestType
+	{
+		return $this->services;
+	}
+
+	/**
+	 * @param null|ServicesRequestType $services
+	 * @return ProductRequestType
+	 */
+	public function setServices(?ServicesRequestType $services = null): ProductRequestType
+	{
+		$this->services = $services;
+		return $this;
+	}
+
+	/**
+	 * @return null|CustomsDeclarationRequestType
+	 */
+	public function getCustomsDeclaration(): ?CustomsDeclarationRequestType
+	{
+		return $this->customsDeclaration;
+	}
+
+	/**
+	 * @param null|CustomsDeclarationRequestType $customsDeclaration
+	 * @return ProductRequestType
+	 */
+	public function setCustomsDeclaration(?CustomsDeclarationRequestType $customsDeclaration = null): ProductRequestType
+	{
+		$this->customsDeclaration = $customsDeclaration;
+		return $this;
+	}
+
+	/**
+	 * @return null|string
+	 */
+	public function getMessageForRecipient(): ?string
+	{
+		return $this->messageForRecipient;
+	}
+
+	/**
+	 * @param null|string $messageForRecipient
+	 * @return ProductRequestType
+	 */
+	public function setMessageForRecipient(?string $messageForRecipient = null): ProductRequestType
+	{
+		$this->messageForRecipient = $messageForRecipient;
+		return $this;
+	}
+
+	/**
+	 * @return null|string|whoPaysInvoice
+	 */
+	public function getWhoPaysInvoice()
+	{
+		return $this->whoPaysInvoice;
+	}
+
+	/**
+	 * @param null|string|whoPaysInvoice $whoPaysInvoice
+	 * @return ProductRequestType
+	 */
+	public function setWhoPaysInvoice($whoPaysInvoice): ProductRequestType
+	{
+		$this->whoPaysInvoice = $whoPaysInvoice;
+		return $this;
+	}
+
+	/**
+	 * @return null|string|incotermRule
+	 */
+	public function getIncotermRule()
+	{
+		return $this->incotermRule;
+	}
+
+	/**
+	 * @param null|string|incotermRule $incotermRule
+	 * @return ProductRequestType
+	 */
+	public function setIncotermRule($incotermRule): ProductRequestType
+	{
+		$this->incotermRule = $incotermRule;
+		return $this;
+	}
 
 }

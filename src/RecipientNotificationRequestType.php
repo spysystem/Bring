@@ -1,64 +1,63 @@
 <?php
-
 namespace Bring;
 
+
+/**
+ * Class RecipientNotificationRequestType
+ */
 class RecipientNotificationRequestType
 {
 
-    /**
-     * @var string $email
-     */
-    protected $email = null;
+	/**
+	 * @var null|string $email
+	 */
+	protected $email;
 
-    /**
-     * @var string $mobile
-     */
-    protected $mobile = null;
+	/**
+	 * @var null|string $mobile
+	 */
+	protected $mobile;
 
-    /**
-     * @param string $email
-     * @param string $mobile
-     */
-    public function __construct($email, $mobile)
-    {
-      $this->email = $email;
-      $this->mobile = $mobile;
-    }
+	
+	public function __construct()
+	{
+	
+	}
 
-    /**
-     * @return string
-     */
-    public function getEmail()
-    {
-      return $this->email;
-    }
+	/**
+	 * @return null|string
+	 */
+	public function getEmail(): ?string
+	{
+		return $this->email;
+	}
 
-    /**
-     * @param string $email
-     * @return \Bring\RecipientNotificationRequestType
-     */
-    public function setEmail($email)
-    {
-      $this->email = $email;
-      return $this;
-    }
+	/**
+	 * @param null|string $email
+	 * @return RecipientNotificationRequestType
+	 */
+	public function setEmail(?string $email = null): RecipientNotificationRequestType
+	{
+		$this->email = $email;
+		return $this;
+	}
 
-    /**
-     * @return string
-     */
-    public function getMobile()
-    {
-      return $this->mobile;
-    }
+	/**
+	 * @return null|string
+	 */
+	public function getMobile(): ?string
+	{
+		return $this->mobile;
+	}
 
-    /**
-     * @param string $mobile
-     * @return \Bring\RecipientNotificationRequestType
-     */
-    public function setMobile($mobile)
-    {
-      $this->mobile = $mobile;
-      return $this;
-    }
+	/**
+	 * @param null|string $mobile
+	 * @return RecipientNotificationRequestType
+	 */
+	public function setMobile(?string $mobile = null): RecipientNotificationRequestType
+	{
+		$this->mobile = $mobile;
+		return $this;
+	}
 
 }

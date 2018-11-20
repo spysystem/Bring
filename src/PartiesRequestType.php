@@ -1,89 +1,136 @@
 <?php
-
 namespace Bring;
 
+
+/**
+ * Class PartiesRequestType
+ */
 class PartiesRequestType
 {
 
-    /**
-     * @var PartyRequestType $sender
-     */
-    protected $sender = null;
+	/**
+	 * @var PartyRequestType $sender
+	 */
+	protected $sender;
 
-    /**
-     * @var PartyRequestType $recipient
-     */
-    protected $recipient = null;
+	/**
+	 * @var PartyRequestType $recipient
+	 */
+	protected $recipient;
 
-    /**
-     * @var PickupPointRequestType $pickupPoint
-     */
-    protected $pickupPoint = null;
+	/**
+	 * @var null|PartyRequestType $consignor
+	 */
+	protected $consignor;
 
-    /**
-     * @param PartyRequestType $sender
-     * @param PartyRequestType $recipient
-     * @param PickupPointRequestType $pickupPoint
-     */
-    public function __construct($sender, $recipient, $pickupPoint)
-    {
-      $this->sender = $sender;
-      $this->recipient = $recipient;
-      $this->pickupPoint = $pickupPoint;
-    }
+	/**
+	 * @var null|PartyRequestType $consignee
+	 */
+	protected $consignee;
 
-    /**
-     * @return PartyRequestType
-     */
-    public function getSender()
-    {
-      return $this->sender;
-    }
+	/**
+	 * @var null|PickupPointRequestType $pickupPoint
+	 */
+	protected $pickupPoint;
 
-    /**
-     * @param PartyRequestType $sender
-     * @return \Bring\PartiesRequestType
-     */
-    public function setSender($sender)
-    {
-      $this->sender = $sender;
-      return $this;
-    }
+	/**
+	 * @param PartyRequestType $sender
+	 * @param PartyRequestType $recipient
+	 */
+	public function __construct(PartyRequestType $sender, PartyRequestType $recipient)
+	{
+		$this->sender = $sender;
+		$this->recipient = $recipient;
+	}
 
-    /**
-     * @return PartyRequestType
-     */
-    public function getRecipient()
-    {
-      return $this->recipient;
-    }
+	/**
+	 * @return PartyRequestType
+	 */
+	public function getSender(): ?PartyRequestType
+	{
+		return $this->sender;
+	}
 
-    /**
-     * @param PartyRequestType $recipient
-     * @return \Bring\PartiesRequestType
-     */
-    public function setRecipient($recipient)
-    {
-      $this->recipient = $recipient;
-      return $this;
-    }
+	/**
+	 * @param PartyRequestType $sender
+	 * @return PartiesRequestType
+	 */
+	public function setSender(PartyRequestType $sender): PartiesRequestType
+	{
+		$this->sender = $sender;
+		return $this;
+	}
 
-    /**
-     * @return PickupPointRequestType
-     */
-    public function getPickupPoint()
-    {
-      return $this->pickupPoint;
-    }
+	/**
+	 * @return PartyRequestType
+	 */
+	public function getRecipient(): ?PartyRequestType
+	{
+		return $this->recipient;
+	}
 
-    /**
-     * @param PickupPointRequestType $pickupPoint
-     * @return \Bring\PartiesRequestType
-     */
-    public function setPickupPoint($pickupPoint)
-    {
-      $this->pickupPoint = $pickupPoint;
-      return $this;
-    }
+	/**
+	 * @param PartyRequestType $recipient
+	 * @return PartiesRequestType
+	 */
+	public function setRecipient(PartyRequestType $recipient): PartiesRequestType
+	{
+		$this->recipient = $recipient;
+		return $this;
+	}
+
+	/**
+	 * @return null|PartyRequestType
+	 */
+	public function getConsignor(): ?PartyRequestType
+	{
+		return $this->consignor;
+	}
+
+	/**
+	 * @param null|PartyRequestType $consignor
+	 * @return PartiesRequestType
+	 */
+	public function setConsignor(?PartyRequestType $consignor = null): PartiesRequestType
+	{
+		$this->consignor = $consignor;
+		return $this;
+	}
+
+	/**
+	 * @return null|PartyRequestType
+	 */
+	public function getConsignee(): ?PartyRequestType
+	{
+		return $this->consignee;
+	}
+
+	/**
+	 * @param null|PartyRequestType $consignee
+	 * @return PartiesRequestType
+	 */
+	public function setConsignee(?PartyRequestType $consignee = null): PartiesRequestType
+	{
+		$this->consignee = $consignee;
+		return $this;
+	}
+
+	/**
+	 * @return null|PickupPointRequestType
+	 */
+	public function getPickupPoint(): ?PickupPointRequestType
+	{
+		return $this->pickupPoint;
+	}
+
+	/**
+	 * @param null|PickupPointRequestType $pickupPoint
+	 * @return PartiesRequestType
+	 */
+	public function setPickupPoint(?PickupPointRequestType $pickupPoint = null): PartiesRequestType
+	{
+		$this->pickupPoint = $pickupPoint;
+		return $this;
+	}
 
 }

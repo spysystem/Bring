@@ -1,139 +1,161 @@
 <?php
-
 namespace Bring;
 
+
+/**
+ * Class PackageGroupRequestType
+ */
 class PackageGroupRequestType
 {
 
-    /**
-     * @var float $totalWeightInKg
-     */
-    protected $totalWeightInKg = null;
+	/**
+	 * @var float $totalWeightInKg
+	 */
+	protected $totalWeightInKg;
 
-    /**
-     * @var string $goodsDescription
-     */
-    protected $goodsDescription = null;
+	/**
+	 * @var null|string $goodsDescription
+	 */
+	protected $goodsDescription;
 
-    /**
-     * @var MeasurementsRequestType $totalDimensions
-     */
-    protected $totalDimensions = null;
+	/**
+	 * @var null|float $volumeInDm3
+	 */
+	protected $volumeInDm3;
 
-    /**
-     * @var int $numberOfPackages
-     */
-    protected $numberOfPackages = null;
+	/**
+	 * @var null|MeasurementsRequestType $totalDimensions
+	 */
+	protected $totalDimensions;
 
-    /**
-     * @var string $correlationId
-     */
-    protected $correlationId = null;
+	/**
+	 * @var int $numberOfPackages
+	 */
+	protected $numberOfPackages;
 
-    /**
-     * @param float $totalWeightInKg
-     * @param string $goodsDescription
-     * @param MeasurementsRequestType $totalDimensions
-     * @param int $numberOfPackages
-     * @param string $correlationId
-     */
-    public function __construct($totalWeightInKg, $goodsDescription, $totalDimensions, $numberOfPackages, $correlationId)
-    {
-      $this->totalWeightInKg = $totalWeightInKg;
-      $this->goodsDescription = $goodsDescription;
-      $this->totalDimensions = $totalDimensions;
-      $this->numberOfPackages = $numberOfPackages;
-      $this->correlationId = $correlationId;
-    }
+	/**
+	 * @var string $correlationId
+	 */
+	protected $correlationId;
 
-    /**
-     * @return float
-     */
-    public function getTotalWeightInKg()
-    {
-      return $this->totalWeightInKg;
-    }
+	/**
+	 * @param float $totalWeightInKg
+	 * @param int $numberOfPackages
+	 * @param string $correlationId
+	 */
+	public function __construct(float $totalWeightInKg, int $numberOfPackages, string $correlationId)
+	{
+		$this->totalWeightInKg = $totalWeightInKg;
+		$this->numberOfPackages = $numberOfPackages;
+		$this->correlationId = $correlationId;
+	}
 
-    /**
-     * @param float $totalWeightInKg
-     * @return \Bring\PackageGroupRequestType
-     */
-    public function setTotalWeightInKg($totalWeightInKg)
-    {
-      $this->totalWeightInKg = $totalWeightInKg;
-      return $this;
-    }
+	/**
+	 * @return float
+	 */
+	public function getTotalWeightInKg(): ?float
+	{
+		return $this->totalWeightInKg;
+	}
 
-    /**
-     * @return string
-     */
-    public function getGoodsDescription()
-    {
-      return $this->goodsDescription;
-    }
+	/**
+	 * @param float $totalWeightInKg
+	 * @return PackageGroupRequestType
+	 */
+	public function setTotalWeightInKg(float $totalWeightInKg): PackageGroupRequestType
+	{
+		$this->totalWeightInKg = $totalWeightInKg;
+		return $this;
+	}
 
-    /**
-     * @param string $goodsDescription
-     * @return \Bring\PackageGroupRequestType
-     */
-    public function setGoodsDescription($goodsDescription)
-    {
-      $this->goodsDescription = $goodsDescription;
-      return $this;
-    }
+	/**
+	 * @return null|string
+	 */
+	public function getGoodsDescription(): ?string
+	{
+		return $this->goodsDescription;
+	}
 
-    /**
-     * @return MeasurementsRequestType
-     */
-    public function getTotalDimensions()
-    {
-      return $this->totalDimensions;
-    }
+	/**
+	 * @param null|string $goodsDescription
+	 * @return PackageGroupRequestType
+	 */
+	public function setGoodsDescription(?string $goodsDescription = null): PackageGroupRequestType
+	{
+		$this->goodsDescription = $goodsDescription;
+		return $this;
+	}
 
-    /**
-     * @param MeasurementsRequestType $totalDimensions
-     * @return \Bring\PackageGroupRequestType
-     */
-    public function setTotalDimensions($totalDimensions)
-    {
-      $this->totalDimensions = $totalDimensions;
-      return $this;
-    }
+	/**
+	 * @return null|float
+	 */
+	public function getVolumeInDm3(): ?float
+	{
+		return $this->volumeInDm3;
+	}
 
-    /**
-     * @return int
-     */
-    public function getNumberOfPackages()
-    {
-      return $this->numberOfPackages;
-    }
+	/**
+	 * @param null|float $volumeInDm3
+	 * @return PackageGroupRequestType
+	 */
+	public function setVolumeInDm3(?float $volumeInDm3 = null): PackageGroupRequestType
+	{
+		$this->volumeInDm3 = $volumeInDm3;
+		return $this;
+	}
 
-    /**
-     * @param int $numberOfPackages
-     * @return \Bring\PackageGroupRequestType
-     */
-    public function setNumberOfPackages($numberOfPackages)
-    {
-      $this->numberOfPackages = $numberOfPackages;
-      return $this;
-    }
+	/**
+	 * @return null|MeasurementsRequestType
+	 */
+	public function getTotalDimensions(): ?MeasurementsRequestType
+	{
+		return $this->totalDimensions;
+	}
 
-    /**
-     * @return string
-     */
-    public function getCorrelationId()
-    {
-      return $this->correlationId;
-    }
+	/**
+	 * @param null|MeasurementsRequestType $totalDimensions
+	 * @return PackageGroupRequestType
+	 */
+	public function setTotalDimensions(?MeasurementsRequestType $totalDimensions = null): PackageGroupRequestType
+	{
+		$this->totalDimensions = $totalDimensions;
+		return $this;
+	}
 
-    /**
-     * @param string $correlationId
-     * @return \Bring\PackageGroupRequestType
-     */
-    public function setCorrelationId($correlationId)
-    {
-      $this->correlationId = $correlationId;
-      return $this;
-    }
+	/**
+	 * @return int
+	 */
+	public function getNumberOfPackages(): ?int
+	{
+		return $this->numberOfPackages;
+	}
+
+	/**
+	 * @param int $numberOfPackages
+	 * @return PackageGroupRequestType
+	 */
+	public function setNumberOfPackages(int $numberOfPackages): PackageGroupRequestType
+	{
+		$this->numberOfPackages = $numberOfPackages;
+		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getCorrelationId(): ?string
+	{
+		return $this->correlationId;
+	}
+
+	/**
+	 * @param string $correlationId
+	 * @return PackageGroupRequestType
+	 */
+	public function setCorrelationId(string $correlationId): PackageGroupRequestType
+	{
+		$this->correlationId = $correlationId;
+		return $this;
+	}
 
 }

@@ -1,89 +1,113 @@
 <?php
-
 namespace Bring;
 
+
+/**
+ * Class LinksResponseType
+ */
 class LinksResponseType
 {
 
-    /**
-     * @var string $labels
-     */
-    protected $labels = null;
+	/**
+	 * @var string $labels
+	 */
+	protected $labels;
 
-    /**
-     * @var string $waybill
-     */
-    protected $waybill = null;
+	/**
+	 * @var null|string $labelArchiveUrl
+	 */
+	protected $labelArchiveUrl;
 
-    /**
-     * @var string $tracking
-     */
-    protected $tracking = null;
+	/**
+	 * @var null|string $waybill
+	 */
+	protected $waybill;
 
-    /**
-     * @param string $labels
-     * @param string $waybill
-     * @param string $tracking
-     */
-    public function __construct($labels, $waybill, $tracking)
-    {
-      $this->labels = $labels;
-      $this->waybill = $waybill;
-      $this->tracking = $tracking;
-    }
+	/**
+	 * @var string $tracking
+	 */
+	protected $tracking;
 
-    /**
-     * @return string
-     */
-    public function getLabels()
-    {
-      return $this->labels;
-    }
+	/**
+	 * @param string $labels
+	 * @param string $tracking
+	 */
+	public function __construct(string $labels, string $tracking)
+	{
+		$this->labels = $labels;
+		$this->tracking = $tracking;
+	}
 
-    /**
-     * @param string $labels
-     * @return \Bring\LinksResponseType
-     */
-    public function setLabels($labels)
-    {
-      $this->labels = $labels;
-      return $this;
-    }
+	/**
+	 * @return string
+	 */
+	public function getLabels(): ?string
+	{
+		return $this->labels;
+	}
 
-    /**
-     * @return string
-     */
-    public function getWaybill()
-    {
-      return $this->waybill;
-    }
+	/**
+	 * @param string $labels
+	 * @return LinksResponseType
+	 */
+	public function setLabels(string $labels): LinksResponseType
+	{
+		$this->labels = $labels;
+		return $this;
+	}
 
-    /**
-     * @param string $waybill
-     * @return \Bring\LinksResponseType
-     */
-    public function setWaybill($waybill)
-    {
-      $this->waybill = $waybill;
-      return $this;
-    }
+	/**
+	 * @return null|string
+	 */
+	public function getLabelArchiveUrl(): ?string
+	{
+		return $this->labelArchiveUrl;
+	}
 
-    /**
-     * @return string
-     */
-    public function getTracking()
-    {
-      return $this->tracking;
-    }
+	/**
+	 * @param null|string $labelArchiveUrl
+	 * @return LinksResponseType
+	 */
+	public function setLabelArchiveUrl(?string $labelArchiveUrl = null): LinksResponseType
+	{
+		$this->labelArchiveUrl = $labelArchiveUrl;
+		return $this;
+	}
 
-    /**
-     * @param string $tracking
-     * @return \Bring\LinksResponseType
-     */
-    public function setTracking($tracking)
-    {
-      $this->tracking = $tracking;
-      return $this;
-    }
+	/**
+	 * @return null|string
+	 */
+	public function getWaybill(): ?string
+	{
+		return $this->waybill;
+	}
+
+	/**
+	 * @param null|string $waybill
+	 * @return LinksResponseType
+	 */
+	public function setWaybill(?string $waybill = null): LinksResponseType
+	{
+		$this->waybill = $waybill;
+		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getTracking(): ?string
+	{
+		return $this->tracking;
+	}
+
+	/**
+	 * @param string $tracking
+	 * @return LinksResponseType
+	 */
+	public function setTracking(string $tracking): LinksResponseType
+	{
+		$this->tracking = $tracking;
+		return $this;
+	}
 
 }

@@ -1,104 +1,166 @@
 <?php
-
 namespace Bring;
 
-class BookingService extends \SoapClient
+use Exception;
+use SoapClient;
+use SoapFault;
+
+/**
+ * Class BookingService
+ *
+ * @package Bring
+ */
+class BookingService extends SoapClient
 {
+	public const WsdlUrl = 'https://api.bring.com/booking/api/ws/booking-v1.wsdl';
 
-    /**
-     * @var array $classmap The defined classes
-     */
-    private static $classmap = array (
-      'cargoInformation' => 'Bring\\cargoInformation',
-      'customerInformation' => 'Bring\\customerInformation',
-      'parcelsInformation' => 'Bring\\parcelsInformation',
-      'pickupAddress' => 'Bring\\pickupAddress',
-      'BookingRequestType' => 'Bring\\BookingRequestType',
-      'consignments' => 'Bring\\consignments',
-      'ConsignmentRequestType' => 'Bring\\ConsignmentRequestType',
-      'PartiesRequestType' => 'Bring\\PartiesRequestType',
-      'PartyRequestType' => 'Bring\\PartyRequestType',
-      'ContactRequestType' => 'Bring\\ContactRequestType',
-      'PickupPointRequestType' => 'Bring\\PickupPointRequestType',
-      'ProductRequestType' => 'Bring\\ProductRequestType',
-      'ServicesRequestType' => 'Bring\\ServicesRequestType',
-      'RecipientNotificationRequestType' => 'Bring\\RecipientNotificationRequestType',
-      'CashOnDeliveryRequestType' => 'Bring\\CashOnDeliveryRequestType',
-      'CashOnDeliveryMessageRequestType' => 'Bring\\CashOnDeliveryMessageRequestType',
-      'FlexDeliveryRequestType' => 'Bring\\FlexDeliveryRequestType',
-      'DangerousGoodsRequestType' => 'Bring\\DangerousGoodsRequestType',
-      'CustomsDeclarationRequestType' => 'Bring\\CustomsDeclarationRequestType',
-      'PurchaseOrderRequestType' => 'Bring\\PurchaseOrderRequestType',
-      'PackagesRequestType' => 'Bring\\PackagesRequestType',
-      'PackageRequestType' => 'Bring\\PackageRequestType',
-      'MeasurementsRequestType' => 'Bring\\MeasurementsRequestType',
-      'PackageGroupsRequestType' => 'Bring\\PackageGroupsRequestType',
-      'PackageGroupRequestType' => 'Bring\\PackageGroupRequestType',
-      'BookingResponseType' => 'Bring\\BookingResponseType',
-      'ConsignmentResponseType' => 'Bring\\ConsignmentResponseType',
-      'errors' => 'Bring\\errors',
-      'ConfirmationResponseType' => 'Bring\\ConfirmationResponseType',
-      'packages' => 'Bring\\packages',
-      'ProductSpecificDataResponseType' => 'Bring\\ProductSpecificDataResponseType',
-      'LinksResponseType' => 'Bring\\LinksResponseType',
-      'DtoDateAndTimesResponseType' => 'Bring\\DtoDateAndTimesResponseType',
-      'PackageResponseType' => 'Bring\\PackageResponseType',
-      'ErrorResponseType' => 'Bring\\ErrorResponseType',
-      'messages' => 'Bring\\messages',
-      'MessageResponseType' => 'Bring\\MessageResponseType',
-      'CustomersRequestType' => 'Bring\\CustomersRequestType',
-      'CustomersResponseType' => 'Bring\\CustomersResponseType',
-      'customers' => 'Bring\\customers',
-      'CustomerResponseType' => 'Bring\\CustomerResponseType',
-      'products' => 'Bring\\products',
-      'PickupOrderRequestType' => 'Bring\\PickupOrderRequestType',
-      'parcelsInternationalInformation' => 'Bring\\parcelsInternationalInformation',
-      'PickupOrderResponseType' => 'Bring\\PickupOrderResponseType',
-      'PickupConfirmationType' => 'Bring\\PickupConfirmationType',
-    );
 
-    /**
-     * @param array $options A array of config values
-     * @param string $wsdl The wsdl file to use
-     */
-    public function __construct(array $options = array(), $wsdl = 'booking-v1.wsdl')
-    {
-      foreach (self::$classmap as $key => $value) {
-        if (!isset($options['classmap'][$key])) {
-          $options['classmap'][$key] = $value;
-        }
-      }
-      $options = array_merge(array (
-      'features' => 1,
-    ), $options);
-      parent::__construct($wsdl, $options);
-    }
+	/**
+	 * @var array $arrClassMap The defined classes
+	 */
+	private static $arrClassMap = [
+		'cargoInformation'					=> cargoInformation::class,
+		'customerInformation'				=> customerInformation::class,
+		'parcelsInformation'				=> parcelsInformation::class,
+		'pickupAddress'						=> pickupAddress::class,
+		'BookingRequestType'				=> BookingRequestType::class,
+		'consignments'						=> consignments::class,
+		'ConsignmentRequestType'			=> ConsignmentRequestType::class,
+		'PartiesRequestType'				=> PartiesRequestType::class,
+		'PartyRequestType'					=> PartyRequestType::class,
+		'ContactRequestType'				=> ContactRequestType::class,
+		'PickupPointRequestType'			=> PickupPointRequestType::class,
+		'ProductRequestType'				=> ProductRequestType::class,
+		'ServicesRequestType'				=> ServicesRequestType::class,
+		'RecipientNotificationRequestType'	=> RecipientNotificationRequestType::class,
+		'CashOnDeliveryRequestType'			=> CashOnDeliveryRequestType::class,
+		'CashOnDeliveryMessageRequestType'	=> CashOnDeliveryMessageRequestType::class,
+		'FlexDeliveryRequestType'			=> FlexDeliveryRequestType::class,
+		'DeliveryIndoorsRequestType'		=> DeliveryIndoorsRequestType::class,
+		'DangerousGoodsRequestType'			=> DangerousGoodsRequestType::class,
+		'CustomsDeclarationRequestType'		=> CustomsDeclarationRequestType::class,
+		'PurchaseOrderRequestType'			=> PurchaseOrderRequestType::class,
+		'PackagesRequestType'				=> PackagesRequestType::class,
+		'PackageRequestType'				=> PackageRequestType::class,
+		'MeasurementsRequestType'			=> MeasurementsRequestType::class,
+		'PackageGroupsRequestType'			=> PackageGroupsRequestType::class,
+		'PackageGroupRequestType'			=> PackageGroupRequestType::class,
+		'BookingResponseType'				=> BookingResponseType::class,
+		'ConsignmentResponseType'			=> ConsignmentResponseType::class,
+		'errors'							=> errors::class,
+		'ConfirmationResponseType'			=> ConfirmationResponseType::class,
+		'packages'							=> packages::class,
+		'ProductSpecificDataResponseType'	=> ProductSpecificDataResponseType::class,
+		'LinksResponseType'					=> LinksResponseType::class,
+		'DtoDateAndTimesResponseType'		=> DtoDateAndTimesResponseType::class,
+		'PackageResponseType'				=> PackageResponseType::class,
+		'ErrorResponseType'					=> ErrorResponseType::class,
+		'messages'							=> messages::class,
+		'MessageResponseType'				=> MessageResponseType::class,
+		'CustomersRequestType'				=> CustomersRequestType::class,
+		'CustomersResponseType'				=> CustomersResponseType::class,
+		'customers'							=> customers::class,
+		'CustomerResponseType'				=> CustomerResponseType::class,
+		'products'							=> products::class,
+		'PickupOrderRequestType'			=> PickupOrderRequestType::class,
+		'parcelsInternationalInformation'	=> parcelsInternationalInformation::class,
+		'PickupOrderResponseType'			=> PickupOrderResponseType::class,
+		'PickupConfirmationType'			=> PickupConfirmationType::class,
+	];
 
-    /**
-     * @param PickupOrderRequestType $pickupOrderRequest
-     * @return PickupOrderResponseType
-     */
-    public function pickupOrder(PickupOrderRequestType $pickupOrderRequest)
-    {
-      return $this->__soapCall('pickupOrder', array($pickupOrderRequest));
-    }
+	/**
+	 * @var string $request Last request made
+	 */
+	private  $request = '';
 
-    /**
-     * @param BookingRequestType $bookingRequest
-     * @return BookingResponseType
-     */
-    public function booking(BookingRequestType $bookingRequest)
-    {
-      return $this->__soapCall('booking', array($bookingRequest));
-    }
+	/**
+	 * @param string $strURL URL or path for WSDL file
+	 * @throws Exception
+	 * @return BookingService
+	 */
+	public static function CreateService(string $strURL = self::WsdlUrl): BookingService
+	{
+		return new static([
+			'trace'			=> true,
+			'exceptions'	=> true,
+			'soap_version'	=> 2,
+			'encoding'		=> 'UTF-8',
+			'features'		=> 1,
+		], $strURL);
+	}
 
-    /**
-     * @param CustomersRequestType $customersRequest
-     * @return CustomersResponseType
-     */
-    public function customers(CustomersRequestType $customersRequest)
-    {
-      return $this->__soapCall('customers', array($customersRequest));
-    }
+	/**
+	 * @param string $strWsdl The wsdl file to use
+	 * @param array $arrOptions A array of config values
+	 * @throws Exception
+	 */
+	public function __construct(array $arrOptions = [], string $strWsdl = self::WsdlUrl)
+	{
+		if ($strWsdl === '')
+		{
+			throw new Exception('Missing WSDL!');
+		}
+		foreach (self::$arrClassMap as $strKey => $mValue)
+		{
+			if (!isset($arrOptions['classmap'][$strKey]))
+			{
+				$arrOptions['classmap'][$strKey]	= $mValue;
+			}
+		}
+		parent::__construct($strWsdl, $arrOptions);
+	}
+
+	/**
+	 * @param string $request
+	 * @param string $location
+	 * @param string $action
+	 * @param int $version
+	 * @param int $one_way
+	 * @return string|null
+	 */
+	public function __doRequest($request, $location, $action, $version, $one_way = 0): ?string
+	{
+		$this->request	= $request;
+		
+		return parent::__doRequest($request, $location, $action, $version, $one_way);
+	}
+
+	/**
+	 * @return string
+	 */
+	public function __getLastRequest(): string
+	{
+			return $this->request ?? '';
+	}
+
+	/**
+	 * @param PickupOrderRequestType $pickupOrderRequest
+	 * @throws SoapFault
+	 * @return PickupOrderResponseType|null
+	 */
+	public function pickupOrder(PickupOrderRequestType $pickupOrderRequest): ?PickupOrderResponseType
+	{
+		return $this->__soapCall('pickupOrder', [$pickupOrderRequest]);
+	}
+
+	/**
+	 * @param BookingRequestType $bookingRequest
+	 * @throws SoapFault
+	 * @return BookingResponseType|null
+	 */
+	public function booking(BookingRequestType $bookingRequest): ?BookingResponseType
+	{
+		return $this->__soapCall('booking', [$bookingRequest]);
+	}
+
+	/**
+	 * @param CustomersRequestType $customersRequest
+	 * @throws SoapFault
+	 * @return CustomersResponseType|null
+	 */
+	public function customers(CustomersRequestType $customersRequest): ?CustomersResponseType
+	{
+		return $this->__soapCall('customers', [$customersRequest]);
+	}
 
 }

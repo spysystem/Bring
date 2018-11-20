@@ -1,64 +1,65 @@
 <?php
-
 namespace Bring;
 
+
+/**
+ * Class PickupOrderResponseType
+ */
 class PickupOrderResponseType
 {
 
-    /**
-     * @var PickupConfirmationType $pickupConfirmation
-     */
-    protected $pickupConfirmation = null;
+	/**
+	 * @var PickupConfirmationType $pickupConfirmation
+	 */
+	protected $pickupConfirmation;
 
-    /**
-     * @var errors $errors
-     */
-    protected $errors = null;
+	/**
+	 * @var null|errors $errors
+	 */
+	protected $errors;
 
-    /**
-     * @param PickupConfirmationType $pickupConfirmation
-     * @param errors $errors
-     */
-    public function __construct($pickupConfirmation, $errors)
-    {
-      $this->pickupConfirmation = $pickupConfirmation;
-      $this->errors = $errors;
-    }
+	/**
+	 * @param PickupConfirmationType $pickupConfirmation
+	 */
+	public function __construct(PickupConfirmationType $pickupConfirmation)
+	{
+		$this->pickupConfirmation = $pickupConfirmation;
+	}
 
-    /**
-     * @return PickupConfirmationType
-     */
-    public function getPickupConfirmation()
-    {
-      return $this->pickupConfirmation;
-    }
+	/**
+	 * @return PickupConfirmationType
+	 */
+	public function getPickupConfirmation(): ?PickupConfirmationType
+	{
+		return $this->pickupConfirmation;
+	}
 
-    /**
-     * @param PickupConfirmationType $pickupConfirmation
-     * @return \Bring\PickupOrderResponseType
-     */
-    public function setPickupConfirmation($pickupConfirmation)
-    {
-      $this->pickupConfirmation = $pickupConfirmation;
-      return $this;
-    }
+	/**
+	 * @param PickupConfirmationType $pickupConfirmation
+	 * @return PickupOrderResponseType
+	 */
+	public function setPickupConfirmation(PickupConfirmationType $pickupConfirmation): PickupOrderResponseType
+	{
+		$this->pickupConfirmation = $pickupConfirmation;
+		return $this;
+	}
 
-    /**
-     * @return errors
-     */
-    public function getErrors()
-    {
-      return $this->errors;
-    }
+	/**
+	 * @return null|errors
+	 */
+	public function getErrors(): ?errors
+	{
+		return $this->errors;
+	}
 
-    /**
-     * @param errors $errors
-     * @return \Bring\PickupOrderResponseType
-     */
-    public function setErrors($errors)
-    {
-      $this->errors = $errors;
-      return $this;
-    }
+	/**
+	 * @param null|errors $errors
+	 * @return PickupOrderResponseType
+	 */
+	public function setErrors(?errors $errors = null): PickupOrderResponseType
+	{
+		$this->errors = $errors;
+		return $this;
+	}
 
 }

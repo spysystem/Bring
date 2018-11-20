@@ -1,7 +1,9 @@
 <?php
 
-
- function autoload_65797fa19198960091bc2c17cfc008ff($class)
+/**
+ * @param $class
+ */
+function autoload_65797fa19198960091bc2c17cfc008ff($class)
 {
     $classes = array(
         'Bring\BookingService' => __DIR__ .'/BookingService.php',
@@ -22,6 +24,7 @@
         'Bring\CashOnDeliveryRequestType' => __DIR__ .'/CashOnDeliveryRequestType.php',
         'Bring\CashOnDeliveryMessageRequestType' => __DIR__ .'/CashOnDeliveryMessageRequestType.php',
         'Bring\FlexDeliveryRequestType' => __DIR__ .'/FlexDeliveryRequestType.php',
+        'Bring\DeliveryIndoorsRequestType' => __DIR__ .'/DeliveryIndoorsRequestType.php',
         'Bring\DangerousGoodsRequestType' => __DIR__ .'/DangerousGoodsRequestType.php',
         'Bring\CustomsDeclarationRequestType' => __DIR__ .'/CustomsDeclarationRequestType.php',
         'Bring\PurchaseOrderRequestType' => __DIR__ .'/PurchaseOrderRequestType.php',
@@ -52,7 +55,9 @@
         'Bring\PickupOrderResponseType' => __DIR__ .'/PickupOrderResponseType.php',
         'Bring\PickupConfirmationType' => __DIR__ .'/PickupConfirmationType.php',
         'Bring\AccountType' => __DIR__ .'/AccountType.php',
-        'Bring\MessageTypeRequestType' => __DIR__ .'/MessageTypeRequestType.php'
+        'Bring\MessageTypeRequestType' => __DIR__ .'/MessageTypeRequestType.php',
+        'Bring\whoPaysInvoice' => __DIR__ .'/whoPaysInvoice.php',
+        'Bring\incotermRule' => __DIR__ .'/incotermRule.php'
     );
     if (!empty($classes[$class])) {
         include $classes[$class];

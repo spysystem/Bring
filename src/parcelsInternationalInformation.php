@@ -1,89 +1,92 @@
 <?php
-
 namespace Bring;
 
+
+/**
+ * Class parcelsInternationalInformation
+ */
 class parcelsInternationalInformation
 {
 
-    /**
-     * @var int $numberOfPackages
-     */
-    protected $numberOfPackages = null;
+	/**
+	 * @var int $numberOfPackages
+	 */
+	protected $numberOfPackages;
 
-    /**
-     * @var int $numberOfPallets
-     */
-    protected $numberOfPallets = null;
+	/**
+	 * @var int $numberOfPallets
+	 */
+	protected $numberOfPallets;
 
-    /**
-     * @var int $weightInGrams
-     */
-    protected $weightInGrams = null;
+	/**
+	 * @var int $weightInGrams
+	 */
+	protected $weightInGrams;
 
-    /**
-     * @param int $numberOfPackages
-     * @param int $numberOfPallets
-     * @param int $weightInGrams
-     */
-    public function __construct($numberOfPackages, $numberOfPallets, $weightInGrams)
-    {
-      $this->numberOfPackages = $numberOfPackages;
-      $this->numberOfPallets = $numberOfPallets;
-      $this->weightInGrams = $weightInGrams;
-    }
+	/**
+	 * @param int $numberOfPackages
+	 * @param int $numberOfPallets
+	 * @param int $weightInGrams
+	 */
+	public function __construct(int $numberOfPackages, int $numberOfPallets, int $weightInGrams)
+	{
+		$this->numberOfPackages = $numberOfPackages;
+		$this->numberOfPallets = $numberOfPallets;
+		$this->weightInGrams = $weightInGrams;
+	}
 
-    /**
-     * @return int
-     */
-    public function getNumberOfPackages()
-    {
-      return $this->numberOfPackages;
-    }
+	/**
+	 * @return int
+	 */
+	public function getNumberOfPackages(): ?int
+	{
+		return $this->numberOfPackages;
+	}
 
-    /**
-     * @param int $numberOfPackages
-     * @return \Bring\parcelsInternationalInformation
-     */
-    public function setNumberOfPackages($numberOfPackages)
-    {
-      $this->numberOfPackages = $numberOfPackages;
-      return $this;
-    }
+	/**
+	 * @param int $numberOfPackages
+	 * @return parcelsInternationalInformation
+	 */
+	public function setNumberOfPackages(int $numberOfPackages): parcelsInternationalInformation
+	{
+		$this->numberOfPackages = $numberOfPackages;
+		return $this;
+	}
 
-    /**
-     * @return int
-     */
-    public function getNumberOfPallets()
-    {
-      return $this->numberOfPallets;
-    }
+	/**
+	 * @return int
+	 */
+	public function getNumberOfPallets(): ?int
+	{
+		return $this->numberOfPallets;
+	}
 
-    /**
-     * @param int $numberOfPallets
-     * @return \Bring\parcelsInternationalInformation
-     */
-    public function setNumberOfPallets($numberOfPallets)
-    {
-      $this->numberOfPallets = $numberOfPallets;
-      return $this;
-    }
+	/**
+	 * @param int $numberOfPallets
+	 * @return parcelsInternationalInformation
+	 */
+	public function setNumberOfPallets(int $numberOfPallets): parcelsInternationalInformation
+	{
+		$this->numberOfPallets = $numberOfPallets;
+		return $this;
+	}
 
-    /**
-     * @return int
-     */
-    public function getWeightInGrams()
-    {
-      return $this->weightInGrams;
-    }
+	/**
+	 * @return int
+	 */
+	public function getWeightInGrams(): ?int
+	{
+		return $this->weightInGrams;
+	}
 
-    /**
-     * @param int $weightInGrams
-     * @return \Bring\parcelsInternationalInformation
-     */
-    public function setWeightInGrams($weightInGrams)
-    {
-      $this->weightInGrams = $weightInGrams;
-      return $this;
-    }
+	/**
+	 * @param int $weightInGrams
+	 * @return parcelsInternationalInformation
+	 */
+	public function setWeightInGrams(int $weightInGrams): parcelsInternationalInformation
+	{
+		$this->weightInGrams = $weightInGrams;
+		return $this;
+	}
 
 }

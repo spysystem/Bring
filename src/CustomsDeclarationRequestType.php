@@ -1,64 +1,65 @@
 <?php
-
 namespace Bring;
 
+
+/**
+ * Class CustomsDeclarationRequestType
+ */
 class CustomsDeclarationRequestType
 {
 
-    /**
-     * @var string $customsDeclarationType
-     */
-    protected $customsDeclarationType = null;
+	/**
+	 * @var string $customsDeclarationType
+	 */
+	protected $customsDeclarationType;
 
-    /**
-     * @var string $customsDeclarationText
-     */
-    protected $customsDeclarationText = null;
+	/**
+	 * @var null|string $customsDeclarationText
+	 */
+	protected $customsDeclarationText;
 
-    /**
-     * @param string $customsDeclarationType
-     * @param string $customsDeclarationText
-     */
-    public function __construct($customsDeclarationType, $customsDeclarationText)
-    {
-      $this->customsDeclarationType = $customsDeclarationType;
-      $this->customsDeclarationText = $customsDeclarationText;
-    }
+	/**
+	 * @param string $customsDeclarationType
+	 */
+	public function __construct(string $customsDeclarationType)
+	{
+		$this->customsDeclarationType = $customsDeclarationType;
+	}
 
-    /**
-     * @return string
-     */
-    public function getCustomsDeclarationType()
-    {
-      return $this->customsDeclarationType;
-    }
+	/**
+	 * @return string
+	 */
+	public function getCustomsDeclarationType(): ?string
+	{
+		return $this->customsDeclarationType;
+	}
 
-    /**
-     * @param string $customsDeclarationType
-     * @return \Bring\CustomsDeclarationRequestType
-     */
-    public function setCustomsDeclarationType($customsDeclarationType)
-    {
-      $this->customsDeclarationType = $customsDeclarationType;
-      return $this;
-    }
+	/**
+	 * @param string $customsDeclarationType
+	 * @return CustomsDeclarationRequestType
+	 */
+	public function setCustomsDeclarationType(string $customsDeclarationType): CustomsDeclarationRequestType
+	{
+		$this->customsDeclarationType = $customsDeclarationType;
+		return $this;
+	}
 
-    /**
-     * @return string
-     */
-    public function getCustomsDeclarationText()
-    {
-      return $this->customsDeclarationText;
-    }
+	/**
+	 * @return null|string
+	 */
+	public function getCustomsDeclarationText(): ?string
+	{
+		return $this->customsDeclarationText;
+	}
 
-    /**
-     * @param string $customsDeclarationText
-     * @return \Bring\CustomsDeclarationRequestType
-     */
-    public function setCustomsDeclarationText($customsDeclarationText)
-    {
-      $this->customsDeclarationText = $customsDeclarationText;
-      return $this;
-    }
+	/**
+	 * @param null|string $customsDeclarationText
+	 * @return CustomsDeclarationRequestType
+	 */
+	public function setCustomsDeclarationText(?string $customsDeclarationText = null): CustomsDeclarationRequestType
+	{
+		$this->customsDeclarationText = $customsDeclarationText;
+		return $this;
+	}
 
 }

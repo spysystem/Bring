@@ -1,80 +1,101 @@
 <?php
-
 namespace Bring;
 
+use DateTime;
+use Exception;
+
+/**
+ * Class DtoDateAndTimesResponseType
+ */
 class DtoDateAndTimesResponseType
 {
 
-    /**
-     * @var \DateTime $earliestPickup
-     */
-    protected $earliestPickup = null;
+	/**
+	 * @var null|DateTime $earliestPickup
+	 */
+	protected $earliestPickup;
 
-    /**
-     * @var \DateTime $expectedDelivery
-     */
-    protected $expectedDelivery = null;
+	/**
+	 * @var null|DateTime $expectedDelivery
+	 */
+	protected $expectedDelivery;
 
-    /**
-     * @param \DateTime $earliestPickup
-     * @param \DateTime $expectedDelivery
-     */
-    public function __construct(\DateTime $earliestPickup, \DateTime $expectedDelivery)
-    {
-      $this->earliestPickup = $earliestPickup->format(\DateTime::ATOM);
-      $this->expectedDelivery = $expectedDelivery->format(\DateTime::ATOM);
-    }
+	
+	public function __construct()
+	{
+	
+	}
 
-    /**
-     * @return \DateTime
-     */
-    public function getEarliestPickup()
-    {
-      if ($this->earliestPickup == null) {
-        return null;
-      } else {
-        try {
-          return new \DateTime($this->earliestPickup);
-        } catch (\Exception $e) {
-          return false;
-        }
-      }
-    }
+	/**
+	 * @return null|DateTime
+	 */
+	public function getEarliestPickup(): ?DateTime
+	{
+		if ($this->earliestPickup === null)
+		{
+			return null;
+		}
+		try
+		{
+			return new DateTime($this->earliestPickup);
+		}
+		catch (Exception $oException)
+		{
+			return null;
+		}
+	}
 
-    /**
-     * @param \DateTime $earliestPickup
-     * @return \Bring\DtoDateAndTimesResponseType
-     */
-    public function setEarliestPickup(\DateTime $earliestPickup)
-    {
-      $this->earliestPickup = $earliestPickup->format(\DateTime::ATOM);
-      return $this;
-    }
+	/**
+	 * @param null|DateTime $earliestPickup
+	 * @return DtoDateAndTimesResponseType
+	 */
+	public function setEarliestPickup(?DateTime $earliestPickup = null): DtoDateAndTimesResponseType
+	{
+		if ($earliestPickup === null)
+		{
+			$this->earliestPickup = null;
+		}
+		else
+		{
+			$this->earliestPickup = $earliestPickup->format(DateTime::ATOM);
+		}
+		return $this;
+	}
 
-    /**
-     * @return \DateTime
-     */
-    public function getExpectedDelivery()
-    {
-      if ($this->expectedDelivery == null) {
-        return null;
-      } else {
-        try {
-          return new \DateTime($this->expectedDelivery);
-        } catch (\Exception $e) {
-          return false;
-        }
-      }
-    }
+	/**
+	 * @return null|DateTime
+	 */
+	public function getExpectedDelivery(): ?DateTime
+	{
+		if ($this->expectedDelivery === null)
+		{
+			return null;
+		}
+		try
+		{
+			return new DateTime($this->expectedDelivery);
+		}
+		catch (Exception $oException)
+		{
+			return null;
+		}
+	}
 
-    /**
-     * @param \DateTime $expectedDelivery
-     * @return \Bring\DtoDateAndTimesResponseType
-     */
-    public function setExpectedDelivery(\DateTime $expectedDelivery)
-    {
-      $this->expectedDelivery = $expectedDelivery->format(\DateTime::ATOM);
-      return $this;
-    }
+	/**
+	 * @param null|DateTime $expectedDelivery
+	 * @return DtoDateAndTimesResponseType
+	 */
+	public function setExpectedDelivery(?DateTime $expectedDelivery = null): DtoDateAndTimesResponseType
+	{
+		if ($expectedDelivery === null)
+		{
+			$this->expectedDelivery = null;
+		}
+		else
+		{
+			$this->expectedDelivery = $expectedDelivery->format(DateTime::ATOM);
+		}
+		return $this;
+	}
 
 }

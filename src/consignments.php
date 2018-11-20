@@ -1,39 +1,42 @@
 <?php
-
 namespace Bring;
 
+
+/**
+ * Class consignments
+ */
 class consignments
 {
 
-    /**
-     * @var ConsignmentRequestType[] $consignment
-     */
-    protected $consignment = null;
+	/**
+	 * @var ConsignmentResponseType[] $consignment
+	 */
+	protected $consignment;
 
-    /**
-     * @param ConsignmentRequestType[] $consignment
-     */
-    public function __construct(array $consignment)
-    {
-      $this->consignment = $consignment;
-    }
+	/**
+	 * @param ConsignmentResponseType[] $consignment
+	 */
+	public function __construct(array $consignment)
+	{
+		$this->consignment = $consignment;
+	}
 
-    /**
-     * @return ConsignmentRequestType[]
-     */
-    public function getConsignment()
-    {
-      return $this->consignment;
-    }
+	/**
+	 * @return ConsignmentResponseType[]
+	 */
+	public function getConsignment(): ?array
+	{
+		return $this->consignment;
+	}
 
-    /**
-     * @param ConsignmentRequestType[] $consignment
-     * @return \Bring\consignments
-     */
-    public function setConsignment(array $consignment)
-    {
-      $this->consignment = $consignment;
-      return $this;
-    }
+	/**
+	 * @param ConsignmentResponseType[] $consignment
+	 * @return consignments
+	 */
+	public function setConsignment(array $consignment): consignments
+	{
+		$this->consignment = $consignment;
+		return $this;
+	}
 
 }

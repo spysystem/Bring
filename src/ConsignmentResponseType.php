@@ -1,89 +1,88 @@
 <?php
-
 namespace Bring;
 
+
+/**
+ * Class ConsignmentResponseType
+ */
 class ConsignmentResponseType
 {
 
-    /**
-     * @var ConfirmationResponseType $confirmation
-     */
-    protected $confirmation = null;
+	/**
+	 * @var null|ConfirmationResponseType $confirmation
+	 */
+	protected $confirmation;
 
-    /**
-     * @var errors $errors
-     */
-    protected $errors = null;
+	/**
+	 * @var null|errors $errors
+	 */
+	protected $errors;
 
-    /**
-     * @var string $correlationId
-     */
-    protected $correlationId = null;
+	/**
+	 * @var string $correlationId
+	 */
+	protected $correlationId;
 
-    /**
-     * @param ConfirmationResponseType $confirmation
-     * @param errors $errors
-     * @param string $correlationId
-     */
-    public function __construct($confirmation, $errors, $correlationId)
-    {
-      $this->confirmation = $confirmation;
-      $this->errors = $errors;
-      $this->correlationId = $correlationId;
-    }
+	/**
+	 * @param string $correlationId
+	 */
+	public function __construct(string $correlationId)
+	{
+		$this->correlationId = $correlationId;
+	}
 
-    /**
-     * @return ConfirmationResponseType
-     */
-    public function getConfirmation()
-    {
-      return $this->confirmation;
-    }
+	/**
+	 * @return null|ConfirmationResponseType
+	 */
+	public function getConfirmation(): ?ConfirmationResponseType
+	{
+		return $this->confirmation;
+	}
 
-    /**
-     * @param ConfirmationResponseType $confirmation
-     * @return \Bring\ConsignmentResponseType
-     */
-    public function setConfirmation($confirmation)
-    {
-      $this->confirmation = $confirmation;
-      return $this;
-    }
+	/**
+	 * @param null|ConfirmationResponseType $confirmation
+	 * @return ConsignmentResponseType
+	 */
+	public function setConfirmation(?ConfirmationResponseType $confirmation = null): ConsignmentResponseType
+	{
+		$this->confirmation = $confirmation;
+		return $this;
+	}
 
-    /**
-     * @return errors
-     */
-    public function getErrors()
-    {
-      return $this->errors;
-    }
+	/**
+	 * @return null|errors
+	 */
+	public function getErrors(): ?errors
+	{
+		return $this->errors;
+	}
 
-    /**
-     * @param errors $errors
-     * @return \Bring\ConsignmentResponseType
-     */
-    public function setErrors($errors)
-    {
-      $this->errors = $errors;
-      return $this;
-    }
+	/**
+	 * @param null|errors $errors
+	 * @return ConsignmentResponseType
+	 */
+	public function setErrors(?errors $errors = null): ConsignmentResponseType
+	{
+		$this->errors = $errors;
+		return $this;
+	}
 
-    /**
-     * @return string
-     */
-    public function getCorrelationId()
-    {
-      return $this->correlationId;
-    }
+	/**
+	 * @return string
+	 */
+	public function getCorrelationId(): ?string
+	{
+		return $this->correlationId;
+	}
 
-    /**
-     * @param string $correlationId
-     * @return \Bring\ConsignmentResponseType
-     */
-    public function setCorrelationId($correlationId)
-    {
-      $this->correlationId = $correlationId;
-      return $this;
-    }
+	/**
+	 * @param string $correlationId
+	 * @return ConsignmentResponseType
+	 */
+	public function setCorrelationId(string $correlationId): ConsignmentResponseType
+	{
+		$this->correlationId = $correlationId;
+		return $this;
+	}
 
 }

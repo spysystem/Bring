@@ -1,39 +1,42 @@
 <?php
-
 namespace Bring;
 
+
+/**
+ * Class PackagesRequestType
+ */
 class PackagesRequestType
 {
 
-    /**
-     * @var PackageRequestType[] $package
-     */
-    protected $package = null;
+	/**
+	 * @var PackageRequestType[] $package
+	 */
+	protected $package;
 
-    /**
-     * @param PackageRequestType[] $package
-     */
-    public function __construct(array $package)
-    {
-      $this->package = $package;
-    }
+	/**
+	 * @param PackageRequestType[] $package
+	 */
+	public function __construct(array $package)
+	{
+		$this->package = $package;
+	}
 
-    /**
-     * @return PackageRequestType[]
-     */
-    public function getPackage()
-    {
-      return $this->package;
-    }
+	/**
+	 * @return PackageRequestType[]
+	 */
+	public function getPackage(): ?array
+	{
+		return $this->package;
+	}
 
-    /**
-     * @param PackageRequestType[] $package
-     * @return \Bring\PackagesRequestType
-     */
-    public function setPackage(array $package)
-    {
-      $this->package = $package;
-      return $this;
-    }
+	/**
+	 * @param PackageRequestType[] $package
+	 * @return PackagesRequestType
+	 */
+	public function setPackage(array $package): PackagesRequestType
+	{
+		$this->package = $package;
+		return $this;
+	}
 
 }

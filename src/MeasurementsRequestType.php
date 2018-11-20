@@ -1,89 +1,92 @@
 <?php
-
 namespace Bring;
 
+
+/**
+ * Class MeasurementsRequestType
+ */
 class MeasurementsRequestType
 {
 
-    /**
-     * @var int $heightInCm
-     */
-    protected $heightInCm = null;
+	/**
+	 * @var int $heightInCm
+	 */
+	protected $heightInCm;
 
-    /**
-     * @var int $widthInCm
-     */
-    protected $widthInCm = null;
+	/**
+	 * @var int $widthInCm
+	 */
+	protected $widthInCm;
 
-    /**
-     * @var int $lengthInCm
-     */
-    protected $lengthInCm = null;
+	/**
+	 * @var int $lengthInCm
+	 */
+	protected $lengthInCm;
 
-    /**
-     * @param int $heightInCm
-     * @param int $widthInCm
-     * @param int $lengthInCm
-     */
-    public function __construct($heightInCm, $widthInCm, $lengthInCm)
-    {
-      $this->heightInCm = $heightInCm;
-      $this->widthInCm = $widthInCm;
-      $this->lengthInCm = $lengthInCm;
-    }
+	/**
+	 * @param int $heightInCm
+	 * @param int $widthInCm
+	 * @param int $lengthInCm
+	 */
+	public function __construct(int $heightInCm, int $widthInCm, int $lengthInCm)
+	{
+		$this->heightInCm = $heightInCm;
+		$this->widthInCm = $widthInCm;
+		$this->lengthInCm = $lengthInCm;
+	}
 
-    /**
-     * @return int
-     */
-    public function getHeightInCm()
-    {
-      return $this->heightInCm;
-    }
+	/**
+	 * @return int
+	 */
+	public function getHeightInCm(): ?int
+	{
+		return $this->heightInCm;
+	}
 
-    /**
-     * @param int $heightInCm
-     * @return \Bring\MeasurementsRequestType
-     */
-    public function setHeightInCm($heightInCm)
-    {
-      $this->heightInCm = $heightInCm;
-      return $this;
-    }
+	/**
+	 * @param int $heightInCm
+	 * @return MeasurementsRequestType
+	 */
+	public function setHeightInCm(int $heightInCm): MeasurementsRequestType
+	{
+		$this->heightInCm = $heightInCm;
+		return $this;
+	}
 
-    /**
-     * @return int
-     */
-    public function getWidthInCm()
-    {
-      return $this->widthInCm;
-    }
+	/**
+	 * @return int
+	 */
+	public function getWidthInCm(): ?int
+	{
+		return $this->widthInCm;
+	}
 
-    /**
-     * @param int $widthInCm
-     * @return \Bring\MeasurementsRequestType
-     */
-    public function setWidthInCm($widthInCm)
-    {
-      $this->widthInCm = $widthInCm;
-      return $this;
-    }
+	/**
+	 * @param int $widthInCm
+	 * @return MeasurementsRequestType
+	 */
+	public function setWidthInCm(int $widthInCm): MeasurementsRequestType
+	{
+		$this->widthInCm = $widthInCm;
+		return $this;
+	}
 
-    /**
-     * @return int
-     */
-    public function getLengthInCm()
-    {
-      return $this->lengthInCm;
-    }
+	/**
+	 * @return int
+	 */
+	public function getLengthInCm(): ?int
+	{
+		return $this->lengthInCm;
+	}
 
-    /**
-     * @param int $lengthInCm
-     * @return \Bring\MeasurementsRequestType
-     */
-    public function setLengthInCm($lengthInCm)
-    {
-      $this->lengthInCm = $lengthInCm;
-      return $this;
-    }
+	/**
+	 * @param int $lengthInCm
+	 * @return MeasurementsRequestType
+	 */
+	public function setLengthInCm(int $lengthInCm): MeasurementsRequestType
+	{
+		$this->lengthInCm = $lengthInCm;
+		return $this;
+	}
 
 }

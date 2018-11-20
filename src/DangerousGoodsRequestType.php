@@ -1,239 +1,232 @@
 <?php
-
 namespace Bring;
 
+
+/**
+ * Class DangerousGoodsRequestType
+ */
 class DangerousGoodsRequestType
 {
 
-    /**
-     * @var string $containerId
-     */
-    protected $containerId = null;
+	/**
+	 * @var null|string $containerId
+	 */
+	protected $containerId;
 
-    /**
-     * @var int $weightInGrams
-     */
-    protected $weightInGrams = null;
+	/**
+	 * @var int $weightInGrams
+	 */
+	protected $weightInGrams;
 
-    /**
-     * @var string $unNumber
-     */
-    protected $unNumber = null;
+	/**
+	 * @var string $unNumber
+	 */
+	protected $unNumber;
 
-    /**
-     * @var string $commodity
-     */
-    protected $commodity = null;
+	/**
+	 * @var string $commodity
+	 */
+	protected $commodity;
 
-    /**
-     * @var string $packingGroup
-     */
-    protected $packingGroup = null;
+	/**
+	 * @var null|string $packingGroup
+	 */
+	protected $packingGroup;
 
-    /**
-     * @var string $dangerClass
-     */
-    protected $dangerClass = null;
+	/**
+	 * @var string $dangerClass
+	 */
+	protected $dangerClass;
 
-    /**
-     * @var string $tunnelRestrictionCode
-     */
-    protected $tunnelRestrictionCode = null;
+	/**
+	 * @var null|string $tunnelRestrictionCode
+	 */
+	protected $tunnelRestrictionCode;
 
-    /**
-     * @var string $safetyMarkCode
-     */
-    protected $safetyMarkCode = null;
+	/**
+	 * @var null|string $safetyMarkCode
+	 */
+	protected $safetyMarkCode;
 
-    /**
-     * @var int $factor
-     */
-    protected $factor = null;
+	/**
+	 * @var null|int $factor
+	 */
+	protected $factor;
 
-    /**
-     * @param string $containerId
-     * @param int $weightInGrams
-     * @param string $unNumber
-     * @param string $commodity
-     * @param string $packingGroup
-     * @param string $dangerClass
-     * @param string $tunnelRestrictionCode
-     * @param string $safetyMarkCode
-     * @param int $factor
-     */
-    public function __construct($containerId, $weightInGrams, $unNumber, $commodity, $packingGroup, $dangerClass, $tunnelRestrictionCode, $safetyMarkCode, $factor)
-    {
-      $this->containerId = $containerId;
-      $this->weightInGrams = $weightInGrams;
-      $this->unNumber = $unNumber;
-      $this->commodity = $commodity;
-      $this->packingGroup = $packingGroup;
-      $this->dangerClass = $dangerClass;
-      $this->tunnelRestrictionCode = $tunnelRestrictionCode;
-      $this->safetyMarkCode = $safetyMarkCode;
-      $this->factor = $factor;
-    }
+	/**
+	 * @param int $weightInGrams
+	 * @param string $unNumber
+	 * @param string $commodity
+	 * @param string $dangerClass
+	 */
+	public function __construct(int $weightInGrams, string $unNumber, string $commodity, string $dangerClass)
+	{
+		$this->weightInGrams = $weightInGrams;
+		$this->unNumber = $unNumber;
+		$this->commodity = $commodity;
+		$this->dangerClass = $dangerClass;
+	}
 
-    /**
-     * @return string
-     */
-    public function getContainerId()
-    {
-      return $this->containerId;
-    }
+	/**
+	 * @return null|string
+	 */
+	public function getContainerId(): ?string
+	{
+		return $this->containerId;
+	}
 
-    /**
-     * @param string $containerId
-     * @return \Bring\DangerousGoodsRequestType
-     */
-    public function setContainerId($containerId)
-    {
-      $this->containerId = $containerId;
-      return $this;
-    }
+	/**
+	 * @param null|string $containerId
+	 * @return DangerousGoodsRequestType
+	 */
+	public function setContainerId(?string $containerId = null): DangerousGoodsRequestType
+	{
+		$this->containerId = $containerId;
+		return $this;
+	}
 
-    /**
-     * @return int
-     */
-    public function getWeightInGrams()
-    {
-      return $this->weightInGrams;
-    }
+	/**
+	 * @return int
+	 */
+	public function getWeightInGrams(): ?int
+	{
+		return $this->weightInGrams;
+	}
 
-    /**
-     * @param int $weightInGrams
-     * @return \Bring\DangerousGoodsRequestType
-     */
-    public function setWeightInGrams($weightInGrams)
-    {
-      $this->weightInGrams = $weightInGrams;
-      return $this;
-    }
+	/**
+	 * @param int $weightInGrams
+	 * @return DangerousGoodsRequestType
+	 */
+	public function setWeightInGrams(int $weightInGrams): DangerousGoodsRequestType
+	{
+		$this->weightInGrams = $weightInGrams;
+		return $this;
+	}
 
-    /**
-     * @return string
-     */
-    public function getUnNumber()
-    {
-      return $this->unNumber;
-    }
+	/**
+	 * @return string
+	 */
+	public function getUnNumber(): ?string
+	{
+		return $this->unNumber;
+	}
 
-    /**
-     * @param string $unNumber
-     * @return \Bring\DangerousGoodsRequestType
-     */
-    public function setUnNumber($unNumber)
-    {
-      $this->unNumber = $unNumber;
-      return $this;
-    }
+	/**
+	 * @param string $unNumber
+	 * @return DangerousGoodsRequestType
+	 */
+	public function setUnNumber(string $unNumber): DangerousGoodsRequestType
+	{
+		$this->unNumber = $unNumber;
+		return $this;
+	}
 
-    /**
-     * @return string
-     */
-    public function getCommodity()
-    {
-      return $this->commodity;
-    }
+	/**
+	 * @return string
+	 */
+	public function getCommodity(): ?string
+	{
+		return $this->commodity;
+	}
 
-    /**
-     * @param string $commodity
-     * @return \Bring\DangerousGoodsRequestType
-     */
-    public function setCommodity($commodity)
-    {
-      $this->commodity = $commodity;
-      return $this;
-    }
+	/**
+	 * @param string $commodity
+	 * @return DangerousGoodsRequestType
+	 */
+	public function setCommodity(string $commodity): DangerousGoodsRequestType
+	{
+		$this->commodity = $commodity;
+		return $this;
+	}
 
-    /**
-     * @return string
-     */
-    public function getPackingGroup()
-    {
-      return $this->packingGroup;
-    }
+	/**
+	 * @return null|string
+	 */
+	public function getPackingGroup(): ?string
+	{
+		return $this->packingGroup;
+	}
 
-    /**
-     * @param string $packingGroup
-     * @return \Bring\DangerousGoodsRequestType
-     */
-    public function setPackingGroup($packingGroup)
-    {
-      $this->packingGroup = $packingGroup;
-      return $this;
-    }
+	/**
+	 * @param null|string $packingGroup
+	 * @return DangerousGoodsRequestType
+	 */
+	public function setPackingGroup(?string $packingGroup = null): DangerousGoodsRequestType
+	{
+		$this->packingGroup = $packingGroup;
+		return $this;
+	}
 
-    /**
-     * @return string
-     */
-    public function getDangerClass()
-    {
-      return $this->dangerClass;
-    }
+	/**
+	 * @return string
+	 */
+	public function getDangerClass(): ?string
+	{
+		return $this->dangerClass;
+	}
 
-    /**
-     * @param string $dangerClass
-     * @return \Bring\DangerousGoodsRequestType
-     */
-    public function setDangerClass($dangerClass)
-    {
-      $this->dangerClass = $dangerClass;
-      return $this;
-    }
+	/**
+	 * @param string $dangerClass
+	 * @return DangerousGoodsRequestType
+	 */
+	public function setDangerClass(string $dangerClass): DangerousGoodsRequestType
+	{
+		$this->dangerClass = $dangerClass;
+		return $this;
+	}
 
-    /**
-     * @return string
-     */
-    public function getTunnelRestrictionCode()
-    {
-      return $this->tunnelRestrictionCode;
-    }
+	/**
+	 * @return null|string
+	 */
+	public function getTunnelRestrictionCode(): ?string
+	{
+		return $this->tunnelRestrictionCode;
+	}
 
-    /**
-     * @param string $tunnelRestrictionCode
-     * @return \Bring\DangerousGoodsRequestType
-     */
-    public function setTunnelRestrictionCode($tunnelRestrictionCode)
-    {
-      $this->tunnelRestrictionCode = $tunnelRestrictionCode;
-      return $this;
-    }
+	/**
+	 * @param null|string $tunnelRestrictionCode
+	 * @return DangerousGoodsRequestType
+	 */
+	public function setTunnelRestrictionCode(?string $tunnelRestrictionCode = null): DangerousGoodsRequestType
+	{
+		$this->tunnelRestrictionCode = $tunnelRestrictionCode;
+		return $this;
+	}
 
-    /**
-     * @return string
-     */
-    public function getSafetyMarkCode()
-    {
-      return $this->safetyMarkCode;
-    }
+	/**
+	 * @return null|string
+	 */
+	public function getSafetyMarkCode(): ?string
+	{
+		return $this->safetyMarkCode;
+	}
 
-    /**
-     * @param string $safetyMarkCode
-     * @return \Bring\DangerousGoodsRequestType
-     */
-    public function setSafetyMarkCode($safetyMarkCode)
-    {
-      $this->safetyMarkCode = $safetyMarkCode;
-      return $this;
-    }
+	/**
+	 * @param null|string $safetyMarkCode
+	 * @return DangerousGoodsRequestType
+	 */
+	public function setSafetyMarkCode(?string $safetyMarkCode = null): DangerousGoodsRequestType
+	{
+		$this->safetyMarkCode = $safetyMarkCode;
+		return $this;
+	}
 
-    /**
-     * @return int
-     */
-    public function getFactor()
-    {
-      return $this->factor;
-    }
+	/**
+	 * @return null|int
+	 */
+	public function getFactor(): ?int
+	{
+		return $this->factor;
+	}
 
-    /**
-     * @param int $factor
-     * @return \Bring\DangerousGoodsRequestType
-     */
-    public function setFactor($factor)
-    {
-      $this->factor = $factor;
-      return $this;
-    }
+	/**
+	 * @param null|int $factor
+	 * @return DangerousGoodsRequestType
+	 */
+	public function setFactor(?int $factor = null): DangerousGoodsRequestType
+	{
+		$this->factor = $factor;
+		return $this;
+	}
 
 }

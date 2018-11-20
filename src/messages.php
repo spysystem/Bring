@@ -1,39 +1,42 @@
 <?php
-
 namespace Bring;
 
+
+/**
+ * Class messages
+ */
 class messages
 {
 
-    /**
-     * @var MessageResponseType[] $message
-     */
-    protected $message = null;
+	/**
+	 * @var MessageResponseType[] $message
+	 */
+	protected $message;
 
-    /**
-     * @param MessageResponseType[] $message
-     */
-    public function __construct($message)
-    {
-      $this->message = $message;
-    }
+	/**
+	 * @param MessageResponseType[] $message
+	 */
+	public function __construct(array $message)
+	{
+		$this->message = $message;
+	}
 
-    /**
-     * @return MessageResponseType[]
-     */
-    public function getMessage()
-    {
-      return $this->message;
-    }
+	/**
+	 * @return MessageResponseType[]
+	 */
+	public function getMessage(): ?array
+	{
+		return $this->message;
+	}
 
-    /**
-     * @param MessageResponseType[] $message
-     * @return \Bring\messages
-     */
-    public function setMessage($message)
-    {
-      $this->message = $message;
-      return $this;
-    }
+	/**
+	 * @param MessageResponseType[] $message
+	 * @return messages
+	 */
+	public function setMessage(array $message): messages
+	{
+		$this->message = $message;
+		return $this;
+	}
 
 }

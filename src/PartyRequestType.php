@@ -1,239 +1,255 @@
 <?php
-
 namespace Bring;
 
+
+/**
+ * Class PartyRequestType
+ */
 class PartyRequestType
 {
 
-    /**
-     * @var string $name
-     */
-    protected $name = null;
+	/**
+	 * @var string $name
+	 */
+	protected $name;
 
-    /**
-     * @var string $addressLine
-     */
-    protected $addressLine = null;
+	/**
+	 * @var string $addressLine
+	 */
+	protected $addressLine;
 
-    /**
-     * @var string $addressLine2
-     */
-    protected $addressLine2 = null;
+	/**
+	 * @var null|string $addressLine2
+	 */
+	protected $addressLine2;
 
-    /**
-     * @var string $postalCode
-     */
-    protected $postalCode = null;
+	/**
+	 * @var null|string $postalCode
+	 */
+	protected $postalCode;
 
-    /**
-     * @var string $city
-     */
-    protected $city = null;
+	/**
+	 * @var string $city
+	 */
+	protected $city;
 
-    /**
-     * @var string $countryCode
-     */
-    protected $countryCode = null;
+	/**
+	 * @var string $countryCode
+	 */
+	protected $countryCode;
 
-    /**
-     * @var string $reference
-     */
-    protected $reference = null;
+	/**
+	 * @var null|string $reference
+	 */
+	protected $reference;
 
-    /**
-     * @var string $additionalAddressInfo
-     */
-    protected $additionalAddressInfo = null;
+	/**
+	 * @var null|string $additionalAddressInfo
+	 */
+	protected $additionalAddressInfo;
 
-    /**
-     * @var ContactRequestType $contact
-     */
-    protected $contact = null;
+	/**
+	 * @var null|string $vatNumber
+	 */
+	protected $vatNumber;
 
-    /**
-     * @param string $name
-     * @param string $addressLine
-     * @param string $addressLine2
-     * @param string $postalCode
-     * @param string $city
-     * @param string $countryCode
-     * @param string $reference
-     * @param string $additionalAddressInfo
-     * @param ContactRequestType $contact
-     */
-    public function __construct($name, $addressLine, $addressLine2, $postalCode, $city, $countryCode, $reference, $additionalAddressInfo, $contact)
-    {
-      $this->name = $name;
-      $this->addressLine = $addressLine;
-      $this->addressLine2 = $addressLine2;
-      $this->postalCode = $postalCode;
-      $this->city = $city;
-      $this->countryCode = $countryCode;
-      $this->reference = $reference;
-      $this->additionalAddressInfo = $additionalAddressInfo;
-      $this->contact = $contact;
-    }
+	/**
+	 * @var null|ContactRequestType $contact
+	 */
+	protected $contact;
 
-    /**
-     * @return string
-     */
-    public function getName()
-    {
-      return $this->name;
-    }
+	/**
+	 * @param string $name
+	 * @param string $addressLine
+	 * @param string $city
+	 * @param string $countryCode
+	 */
+	public function __construct(string $name, string $addressLine, string $city, string $countryCode)
+	{
+		$this->name = $name;
+		$this->addressLine = $addressLine;
+		$this->city = $city;
+		$this->countryCode = $countryCode;
+	}
 
-    /**
-     * @param string $name
-     * @return \Bring\PartyRequestType
-     */
-    public function setName($name)
-    {
-      $this->name = $name;
-      return $this;
-    }
+	/**
+	 * @return string
+	 */
+	public function getName(): ?string
+	{
+		return $this->name;
+	}
 
-    /**
-     * @return string
-     */
-    public function getAddressLine()
-    {
-      return $this->addressLine;
-    }
+	/**
+	 * @param string $name
+	 * @return PartyRequestType
+	 */
+	public function setName(string $name): PartyRequestType
+	{
+		$this->name = $name;
+		return $this;
+	}
 
-    /**
-     * @param string $addressLine
-     * @return \Bring\PartyRequestType
-     */
-    public function setAddressLine($addressLine)
-    {
-      $this->addressLine = $addressLine;
-      return $this;
-    }
+	/**
+	 * @return string
+	 */
+	public function getAddressLine(): ?string
+	{
+		return $this->addressLine;
+	}
 
-    /**
-     * @return string
-     */
-    public function getAddressLine2()
-    {
-      return $this->addressLine2;
-    }
+	/**
+	 * @param string $addressLine
+	 * @return PartyRequestType
+	 */
+	public function setAddressLine(string $addressLine): PartyRequestType
+	{
+		$this->addressLine = $addressLine;
+		return $this;
+	}
 
-    /**
-     * @param string $addressLine2
-     * @return \Bring\PartyRequestType
-     */
-    public function setAddressLine2($addressLine2)
-    {
-      $this->addressLine2 = $addressLine2;
-      return $this;
-    }
+	/**
+	 * @return null|string
+	 */
+	public function getAddressLine2(): ?string
+	{
+		return $this->addressLine2;
+	}
 
-    /**
-     * @return string
-     */
-    public function getPostalCode()
-    {
-      return $this->postalCode;
-    }
+	/**
+	 * @param null|string $addressLine2
+	 * @return PartyRequestType
+	 */
+	public function setAddressLine2(?string $addressLine2 = null): PartyRequestType
+	{
+		$this->addressLine2 = $addressLine2;
+		return $this;
+	}
 
-    /**
-     * @param string $postalCode
-     * @return \Bring\PartyRequestType
-     */
-    public function setPostalCode($postalCode)
-    {
-      $this->postalCode = $postalCode;
-      return $this;
-    }
+	/**
+	 * @return null|string
+	 */
+	public function getPostalCode(): ?string
+	{
+		return $this->postalCode;
+	}
 
-    /**
-     * @return string
-     */
-    public function getCity()
-    {
-      return $this->city;
-    }
+	/**
+	 * @param null|string $postalCode
+	 * @return PartyRequestType
+	 */
+	public function setPostalCode(?string $postalCode = null): PartyRequestType
+	{
+		$this->postalCode = $postalCode;
+		return $this;
+	}
 
-    /**
-     * @param string $city
-     * @return \Bring\PartyRequestType
-     */
-    public function setCity($city)
-    {
-      $this->city = $city;
-      return $this;
-    }
+	/**
+	 * @return string
+	 */
+	public function getCity(): ?string
+	{
+		return $this->city;
+	}
 
-    /**
-     * @return string
-     */
-    public function getCountryCode()
-    {
-      return $this->countryCode;
-    }
+	/**
+	 * @param string $city
+	 * @return PartyRequestType
+	 */
+	public function setCity(string $city): PartyRequestType
+	{
+		$this->city = $city;
+		return $this;
+	}
 
-    /**
-     * @param string $countryCode
-     * @return \Bring\PartyRequestType
-     */
-    public function setCountryCode($countryCode)
-    {
-      $this->countryCode = $countryCode;
-      return $this;
-    }
+	/**
+	 * @return string
+	 */
+	public function getCountryCode(): ?string
+	{
+		return $this->countryCode;
+	}
 
-    /**
-     * @return string
-     */
-    public function getReference()
-    {
-      return $this->reference;
-    }
+	/**
+	 * @param string $countryCode
+	 * @return PartyRequestType
+	 */
+	public function setCountryCode(string $countryCode): PartyRequestType
+	{
+		$this->countryCode = $countryCode;
+		return $this;
+	}
 
-    /**
-     * @param string $reference
-     * @return \Bring\PartyRequestType
-     */
-    public function setReference($reference)
-    {
-      $this->reference = $reference;
-      return $this;
-    }
+	/**
+	 * @return null|string
+	 */
+	public function getReference(): ?string
+	{
+		return $this->reference;
+	}
 
-    /**
-     * @return string
-     */
-    public function getAdditionalAddressInfo()
-    {
-      return $this->additionalAddressInfo;
-    }
+	/**
+	 * @param null|string $reference
+	 * @return PartyRequestType
+	 */
+	public function setReference(?string $reference = null): PartyRequestType
+	{
+		$this->reference = $reference;
+		return $this;
+	}
 
-    /**
-     * @param string $additionalAddressInfo
-     * @return \Bring\PartyRequestType
-     */
-    public function setAdditionalAddressInfo($additionalAddressInfo)
-    {
-      $this->additionalAddressInfo = $additionalAddressInfo;
-      return $this;
-    }
+	/**
+	 * @return null|string
+	 */
+	public function getAdditionalAddressInfo(): ?string
+	{
+		return $this->additionalAddressInfo;
+	}
 
-    /**
-     * @return ContactRequestType
-     */
-    public function getContact()
-    {
-      return $this->contact;
-    }
+	/**
+	 * @param null|string $additionalAddressInfo
+	 * @return PartyRequestType
+	 */
+	public function setAdditionalAddressInfo(?string $additionalAddressInfo = null): PartyRequestType
+	{
+		$this->additionalAddressInfo = $additionalAddressInfo;
+		return $this;
+	}
 
-    /**
-     * @param ContactRequestType $contact
-     * @return \Bring\PartyRequestType
-     */
-    public function setContact($contact)
-    {
-      $this->contact = $contact;
-      return $this;
-    }
+	/**
+	 * @return null|string
+	 */
+	public function getVatNumber(): ?string
+	{
+		return $this->vatNumber;
+	}
+
+	/**
+	 * @param null|string $vatNumber
+	 * @return PartyRequestType
+	 */
+	public function setVatNumber(?string $vatNumber = null): PartyRequestType
+	{
+		$this->vatNumber = $vatNumber;
+		return $this;
+	}
+
+	/**
+	 * @return null|ContactRequestType
+	 */
+	public function getContact(): ?ContactRequestType
+	{
+		return $this->contact;
+	}
+
+	/**
+	 * @param null|ContactRequestType $contact
+	 * @return PartyRequestType
+	 */
+	public function setContact(?ContactRequestType $contact = null): PartyRequestType
+	{
+		$this->contact = $contact;
+		return $this;
+	}
 
 }

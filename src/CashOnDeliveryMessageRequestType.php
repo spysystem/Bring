@@ -1,64 +1,67 @@
 <?php
-
 namespace Bring;
 
+
+/**
+ * Class CashOnDeliveryMessageRequestType
+ */
 class CashOnDeliveryMessageRequestType
 {
 
-    /**
-     * @var string $value
-     */
-    protected $value = null;
+	/**
+	 * @var string $value
+	 */
+	protected $value;
 
-    /**
-     * @var MessageTypeRequestType $type
-     */
-    protected $type = null;
+	/**
+	 * @var string|MessageTypeRequestType $type
+	 */
+	protected $type;
 
-    /**
-     * @param string $value
-     * @param MessageTypeRequestType $type
-     */
-    public function __construct($value, $type)
-    {
-      $this->value = $value;
-      $this->type = $type;
-    }
+	/**
+	 * @param string $value
+	 * @param string|MessageTypeRequestType $type
+	 */
+	public function __construct(string $value, $type)
+	{
+		$this->value = $value;
+		$this->type = $type;
+	}
 
-    /**
-     * @return string
-     */
-    public function getValue()
-    {
-      return $this->value;
-    }
+	/**
+	 * @return string
+	 */
+	public function getValue(): ?string
+	{
+		return $this->value;
+	}
 
-    /**
-     * @param string $value
-     * @return \Bring\CashOnDeliveryMessageRequestType
-     */
-    public function setValue($value)
-    {
-      $this->value = $value;
-      return $this;
-    }
+	/**
+	 * @param string $value
+	 * @return CashOnDeliveryMessageRequestType
+	 */
+	public function setValue(string $value): CashOnDeliveryMessageRequestType
+	{
+		$this->value = $value;
+		return $this;
+	}
 
-    /**
-     * @return MessageTypeRequestType
-     */
-    public function getType()
-    {
-      return $this->type;
-    }
+	/**
+	 * @return string|MessageTypeRequestType
+	 */
+	public function getType()
+	{
+		return $this->type;
+	}
 
-    /**
-     * @param MessageTypeRequestType $type
-     * @return \Bring\CashOnDeliveryMessageRequestType
-     */
-    public function setType($type)
-    {
-      $this->type = $type;
-      return $this;
-    }
+	/**
+	 * @param string|MessageTypeRequestType $type
+	 * @return CashOnDeliveryMessageRequestType
+	 */
+	public function setType($type): CashOnDeliveryMessageRequestType
+	{
+		$this->type = $type;
+		return $this;
+	}
 
 }

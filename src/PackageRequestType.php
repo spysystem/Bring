@@ -1,189 +1,274 @@
 <?php
-
 namespace Bring;
 
+
+/**
+ * Class PackageRequestType
+ */
 class PackageRequestType
 {
 
-    /**
-     * @var float $weightInKg
-     */
-    protected $weightInKg = null;
+	/**
+	 * @var float $weightInKg
+	 */
+	protected $weightInKg;
 
-    /**
-     * @var string $goodsDescription
-     */
-    protected $goodsDescription = null;
+	/**
+	 * @var null|string $goodsDescription
+	 */
+	protected $goodsDescription;
 
-    /**
-     * @var MeasurementsRequestType $dimensions
-     */
-    protected $dimensions = null;
+	/**
+	 * @var null|float $volumeInDm3
+	 */
+	protected $volumeInDm3;
 
-    /**
-     * @var string $containerId
-     */
-    protected $containerId = null;
+	/**
+	 * @var null|MeasurementsRequestType $dimensions
+	 */
+	protected $dimensions;
 
-    /**
-     * @var string $packageType
-     */
-    protected $packageType = null;
+	/**
+	 * @var null|string $containerId
+	 */
+	protected $containerId;
 
-    /**
-     * @var int $numberOfItems
-     */
-    protected $numberOfItems = null;
+	/**
+	 * @var null|string $packageType
+	 */
+	protected $packageType;
 
-    /**
-     * @var string $correlationId
-     */
-    protected $correlationId = null;
+	/**
+	 * @var null|int $numberOfItems
+	 */
+	protected $numberOfItems;
 
-    /**
-     * @param float $weightInKg
-     * @param string $goodsDescription
-     * @param MeasurementsRequestType $dimensions
-     * @param string $containerId
-     * @param string $packageType
-     * @param int $numberOfItems
-     * @param string $correlationId
-     */
-    public function __construct($weightInKg, $goodsDescription, $dimensions, $containerId, $packageType, $numberOfItems, $correlationId)
-    {
-      $this->weightInKg = $weightInKg;
-      $this->goodsDescription = $goodsDescription;
-      $this->dimensions = $dimensions;
-      $this->containerId = $containerId;
-      $this->packageType = $packageType;
-      $this->numberOfItems = $numberOfItems;
-      $this->correlationId = $correlationId;
-    }
+	/**
+	 * @var null|bool $isStackable
+	 */
+	protected $isStackable;
 
-    /**
-     * @return float
-     */
-    public function getWeightInKg()
-    {
-      return $this->weightInKg;
-    }
+	/**
+	 * @var null|int $numberOfPallets
+	 */
+	protected $numberOfPallets;
 
-    /**
-     * @param float $weightInKg
-     * @return \Bring\PackageRequestType
-     */
-    public function setWeightInKg($weightInKg)
-    {
-      $this->weightInKg = $weightInKg;
-      return $this;
-    }
+	/**
+	 * @var null|float $loadMeters
+	 */
+	protected $loadMeters;
 
-    /**
-     * @return string
-     */
-    public function getGoodsDescription()
-    {
-      return $this->goodsDescription;
-    }
+	/**
+	 * @var string $correlationId
+	 */
+	protected $correlationId;
 
-    /**
-     * @param string $goodsDescription
-     * @return \Bring\PackageRequestType
-     */
-    public function setGoodsDescription($goodsDescription)
-    {
-      $this->goodsDescription = $goodsDescription;
-      return $this;
-    }
+	/**
+	 * @param float $weightInKg
+	 * @param string $correlationId
+	 */
+	public function __construct(float $weightInKg, string $correlationId)
+	{
+		$this->weightInKg = $weightInKg;
+		$this->correlationId = $correlationId;
+	}
 
-    /**
-     * @return MeasurementsRequestType
-     */
-    public function getDimensions()
-    {
-      return $this->dimensions;
-    }
+	/**
+	 * @return float
+	 */
+	public function getWeightInKg(): ?float
+	{
+		return $this->weightInKg;
+	}
 
-    /**
-     * @param MeasurementsRequestType $dimensions
-     * @return \Bring\PackageRequestType
-     */
-    public function setDimensions($dimensions)
-    {
-      $this->dimensions = $dimensions;
-      return $this;
-    }
+	/**
+	 * @param float $weightInKg
+	 * @return PackageRequestType
+	 */
+	public function setWeightInKg(float $weightInKg): PackageRequestType
+	{
+		$this->weightInKg = $weightInKg;
+		return $this;
+	}
 
-    /**
-     * @return string
-     */
-    public function getContainerId()
-    {
-      return $this->containerId;
-    }
+	/**
+	 * @return null|string
+	 */
+	public function getGoodsDescription(): ?string
+	{
+		return $this->goodsDescription;
+	}
 
-    /**
-     * @param string $containerId
-     * @return \Bring\PackageRequestType
-     */
-    public function setContainerId($containerId)
-    {
-      $this->containerId = $containerId;
-      return $this;
-    }
+	/**
+	 * @param null|string $goodsDescription
+	 * @return PackageRequestType
+	 */
+	public function setGoodsDescription(?string $goodsDescription = null): PackageRequestType
+	{
+		$this->goodsDescription = $goodsDescription;
+		return $this;
+	}
 
-    /**
-     * @return string
-     */
-    public function getPackageType()
-    {
-      return $this->packageType;
-    }
+	/**
+	 * @return null|float
+	 */
+	public function getVolumeInDm3(): ?float
+	{
+		return $this->volumeInDm3;
+	}
 
-    /**
-     * @param string $packageType
-     * @return \Bring\PackageRequestType
-     */
-    public function setPackageType($packageType)
-    {
-      $this->packageType = $packageType;
-      return $this;
-    }
+	/**
+	 * @param null|float $volumeInDm3
+	 * @return PackageRequestType
+	 */
+	public function setVolumeInDm3(?float $volumeInDm3 = null): PackageRequestType
+	{
+		$this->volumeInDm3 = $volumeInDm3;
+		return $this;
+	}
 
-    /**
-     * @return int
-     */
-    public function getNumberOfItems()
-    {
-      return $this->numberOfItems;
-    }
+	/**
+	 * @return null|MeasurementsRequestType
+	 */
+	public function getDimensions(): ?MeasurementsRequestType
+	{
+		return $this->dimensions;
+	}
 
-    /**
-     * @param int $numberOfItems
-     * @return \Bring\PackageRequestType
-     */
-    public function setNumberOfItems($numberOfItems)
-    {
-      $this->numberOfItems = $numberOfItems;
-      return $this;
-    }
+	/**
+	 * @param null|MeasurementsRequestType $dimensions
+	 * @return PackageRequestType
+	 */
+	public function setDimensions(?MeasurementsRequestType $dimensions = null): PackageRequestType
+	{
+		$this->dimensions = $dimensions;
+		return $this;
+	}
 
-    /**
-     * @return string
-     */
-    public function getCorrelationId()
-    {
-      return $this->correlationId;
-    }
+	/**
+	 * @return null|string
+	 */
+	public function getContainerId(): ?string
+	{
+		return $this->containerId;
+	}
 
-    /**
-     * @param string $correlationId
-     * @return \Bring\PackageRequestType
-     */
-    public function setCorrelationId($correlationId)
-    {
-      $this->correlationId = $correlationId;
-      return $this;
-    }
+	/**
+	 * @param null|string $containerId
+	 * @return PackageRequestType
+	 */
+	public function setContainerId(?string $containerId = null): PackageRequestType
+	{
+		$this->containerId = $containerId;
+		return $this;
+	}
+
+	/**
+	 * @return null|string
+	 */
+	public function getPackageType(): ?string
+	{
+		return $this->packageType;
+	}
+
+	/**
+	 * @param null|string $packageType
+	 * @return PackageRequestType
+	 */
+	public function setPackageType(?string $packageType = null): PackageRequestType
+	{
+		$this->packageType = $packageType;
+		return $this;
+	}
+
+	/**
+	 * @return null|int
+	 */
+	public function getNumberOfItems(): ?int
+	{
+		return $this->numberOfItems;
+	}
+
+	/**
+	 * @param null|int $numberOfItems
+	 * @return PackageRequestType
+	 */
+	public function setNumberOfItems(?int $numberOfItems = null): PackageRequestType
+	{
+		$this->numberOfItems = $numberOfItems;
+		return $this;
+	}
+
+	/**
+	 * @return null|bool
+	 */
+	public function getIsStackable(): ?bool
+	{
+		return $this->isStackable;
+	}
+
+	/**
+	 * @param null|bool $isStackable
+	 * @return PackageRequestType
+	 */
+	public function setIsStackable(?bool $isStackable = null): PackageRequestType
+	{
+		$this->isStackable = $isStackable;
+		return $this;
+	}
+
+	/**
+	 * @return null|int
+	 */
+	public function getNumberOfPallets(): ?int
+	{
+		return $this->numberOfPallets;
+	}
+
+	/**
+	 * @param null|int $numberOfPallets
+	 * @return PackageRequestType
+	 */
+	public function setNumberOfPallets(?int $numberOfPallets = null): PackageRequestType
+	{
+		$this->numberOfPallets = $numberOfPallets;
+		return $this;
+	}
+
+	/**
+	 * @return null|float
+	 */
+	public function getLoadMeters(): ?float
+	{
+		return $this->loadMeters;
+	}
+
+	/**
+	 * @param null|float $loadMeters
+	 * @return PackageRequestType
+	 */
+	public function setLoadMeters(?float $loadMeters = null): PackageRequestType
+	{
+		$this->loadMeters = $loadMeters;
+		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getCorrelationId(): ?string
+	{
+		return $this->correlationId;
+	}
+
+	/**
+	 * @param string $correlationId
+	 * @return PackageRequestType
+	 */
+	public function setCorrelationId(string $correlationId): PackageRequestType
+	{
+		$this->correlationId = $correlationId;
+		return $this;
+	}
 
 }

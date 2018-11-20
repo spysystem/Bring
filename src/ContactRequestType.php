@@ -1,89 +1,86 @@
 <?php
-
 namespace Bring;
 
+
+/**
+ * Class ContactRequestType
+ */
 class ContactRequestType
 {
 
-    /**
-     * @var string $name
-     */
-    protected $name = null;
+	/**
+	 * @var null|string $name
+	 */
+	protected $name;
 
-    /**
-     * @var string $email
-     */
-    protected $email = null;
+	/**
+	 * @var null|string $email
+	 */
+	protected $email;
 
-    /**
-     * @var string $phoneNumber
-     */
-    protected $phoneNumber = null;
+	/**
+	 * @var null|string $phoneNumber
+	 */
+	protected $phoneNumber;
 
-    /**
-     * @param string $name
-     * @param string $email
-     * @param string $phoneNumber
-     */
-    public function __construct($name, $email, $phoneNumber)
-    {
-      $this->name = $name;
-      $this->email = $email;
-      $this->phoneNumber = $phoneNumber;
-    }
+	
+	public function __construct()
+	{
+	
+	}
 
-    /**
-     * @return string
-     */
-    public function getName()
-    {
-      return $this->name;
-    }
+	/**
+	 * @return null|string
+	 */
+	public function getName(): ?string
+	{
+		return $this->name;
+	}
 
-    /**
-     * @param string $name
-     * @return \Bring\ContactRequestType
-     */
-    public function setName($name)
-    {
-      $this->name = $name;
-      return $this;
-    }
+	/**
+	 * @param null|string $name
+	 * @return ContactRequestType
+	 */
+	public function setName(?string $name = null): ContactRequestType
+	{
+		$this->name = $name;
+		return $this;
+	}
 
-    /**
-     * @return string
-     */
-    public function getEmail()
-    {
-      return $this->email;
-    }
+	/**
+	 * @return null|string
+	 */
+	public function getEmail(): ?string
+	{
+		return $this->email;
+	}
 
-    /**
-     * @param string $email
-     * @return \Bring\ContactRequestType
-     */
-    public function setEmail($email)
-    {
-      $this->email = $email;
-      return $this;
-    }
+	/**
+	 * @param null|string $email
+	 * @return ContactRequestType
+	 */
+	public function setEmail(?string $email = null): ContactRequestType
+	{
+		$this->email = $email;
+		return $this;
+	}
 
-    /**
-     * @return string
-     */
-    public function getPhoneNumber()
-    {
-      return $this->phoneNumber;
-    }
+	/**
+	 * @return null|string
+	 */
+	public function getPhoneNumber(): ?string
+	{
+		return $this->phoneNumber;
+	}
 
-    /**
-     * @param string $phoneNumber
-     * @return \Bring\ContactRequestType
-     */
-    public function setPhoneNumber($phoneNumber)
-    {
-      $this->phoneNumber = $phoneNumber;
-      return $this;
-    }
+	/**
+	 * @param null|string $phoneNumber
+	 * @return ContactRequestType
+	 */
+	public function setPhoneNumber(?string $phoneNumber = null): ContactRequestType
+	{
+		$this->phoneNumber = $phoneNumber;
+		return $this;
+	}
 
 }

@@ -1,13 +1,14 @@
 {
 	"name": "spysystem/bring",
-	"description": "PHP library for Bring Web Services",
+	"description": "PHP library for bring Web Services",
 	"license": "proprietary",
 	"require": {
-		"php": ">=5.3.0"
-	},
+		"php": ">=7.1",
+		"ext-soap": "*"
+    },
 	"autoload": {
 		"psr-4": {
-			"Bring\\": "src"
+			"Bring\\": "src/"
 		}
 	}
 }

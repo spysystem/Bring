@@ -1,264 +1,385 @@
 <?php
-
 namespace Bring;
 
+
+/**
+ * Class ServicesRequestType
+ */
 class ServicesRequestType
 {
 
-    /**
-     * @var RecipientNotificationRequestType $recipientNotification
-     */
-    protected $recipientNotification = null;
+	/**
+	 * @var null|RecipientNotificationRequestType $recipientNotification
+	 */
+	protected $recipientNotification;
 
-    /**
-     * @var string $quickPackEnvelope
-     */
-    protected $quickPackEnvelope = null;
+	/**
+	 * @var null|string $quickPackEnvelope
+	 */
+	protected $quickPackEnvelope;
 
-    /**
-     * @var CashOnDeliveryRequestType $cashOnDelivery
-     */
-    protected $cashOnDelivery = null;
+	/**
+	 * @var null|CashOnDeliveryRequestType $cashOnDelivery
+	 */
+	protected $cashOnDelivery;
 
-    /**
-     * @var string $deliveryOption
-     */
-    protected $deliveryOption = null;
+	/**
+	 * @var null|string $deliveryOption
+	 */
+	protected $deliveryOption;
 
-    /**
-     * @var FlexDeliveryRequestType $flexDelivery
-     */
-    protected $flexDelivery = null;
+	/**
+	 * @var null|FlexDeliveryRequestType $flexDelivery
+	 */
+	protected $flexDelivery;
 
-    /**
-     * @var string $nonFreeze
-     */
-    protected $nonFreeze = null;
+	/**
+	 * @var null|DeliveryIndoorsRequestType $deliveryIndoors
+	 */
+	protected $deliveryIndoors;
 
-    /**
-     * @var string $customsClearance
-     */
-    protected $customsClearance = null;
+	/**
+	 * @var null|string $phoneNotification
+	 */
+	protected $phoneNotification;
 
-    /**
-     * @var DangerousGoodsRequestType $dangerousGoods
-     */
-    protected $dangerousGoods = null;
+	/**
+	 * @var null|string $nonFreeze
+	 */
+	protected $nonFreeze;
 
-    /**
-     * @var string $express
-     */
-    protected $express = null;
+	/**
+	 * @var null|DangerousGoodsRequestType $dangerousGoods
+	 */
+	protected $dangerousGoods;
 
-    /**
-     * @var string $eveDelivery
-     */
-    protected $eveDelivery = null;
+	/**
+	 * @var null|string $express
+	 */
+	protected $express;
 
-    /**
-     * @param RecipientNotificationRequestType $recipientNotification
-     * @param string $quickPackEnvelope
-     * @param CashOnDeliveryRequestType $cashOnDelivery
-     * @param string $deliveryOption
-     * @param FlexDeliveryRequestType $flexDelivery
-     * @param string $nonFreeze
-     * @param string $customsClearance
-     * @param DangerousGoodsRequestType $dangerousGoods
-     * @param string $express
-     * @param string $eveDelivery
-     */
-    public function __construct($recipientNotification, $quickPackEnvelope, $cashOnDelivery, $deliveryOption, $flexDelivery, $nonFreeze, $customsClearance, $dangerousGoods, $express, $eveDelivery)
-    {
-      $this->recipientNotification = $recipientNotification;
-      $this->quickPackEnvelope = $quickPackEnvelope;
-      $this->cashOnDelivery = $cashOnDelivery;
-      $this->deliveryOption = $deliveryOption;
-      $this->flexDelivery = $flexDelivery;
-      $this->nonFreeze = $nonFreeze;
-      $this->customsClearance = $customsClearance;
-      $this->dangerousGoods = $dangerousGoods;
-      $this->express = $express;
-      $this->eveDelivery = $eveDelivery;
-    }
+	/**
+	 * @var null|string $advisering
+	 */
+	protected $advisering;
 
-    /**
-     * @return RecipientNotificationRequestType
-     */
-    public function getRecipientNotification()
-    {
-      return $this->recipientNotification;
-    }
+	/**
+	 * @var null|string $simpleDelivery
+	 */
+	protected $simpleDelivery;
 
-    /**
-     * @param RecipientNotificationRequestType $recipientNotification
-     * @return \Bring\ServicesRequestType
-     */
-    public function setRecipientNotification($recipientNotification)
-    {
-      $this->recipientNotification = $recipientNotification;
-      return $this;
-    }
+	/**
+	 * @var null|string $frigoTemperatureZone
+	 */
+	protected $frigoTemperatureZone;
 
-    /**
-     * @return string
-     */
-    public function getQuickPackEnvelope()
-    {
-      return $this->quickPackEnvelope;
-    }
+	/**
+	 * @var null|string $insurance
+	 */
+	protected $insurance;
 
-    /**
-     * @param string $quickPackEnvelope
-     * @return \Bring\ServicesRequestType
-     */
-    public function setQuickPackEnvelope($quickPackEnvelope)
-    {
-      $this->quickPackEnvelope = $quickPackEnvelope;
-      return $this;
-    }
+	/**
+	 * @var null|string $letterNotification
+	 */
+	protected $letterNotification;
 
-    /**
-     * @return CashOnDeliveryRequestType
-     */
-    public function getCashOnDelivery()
-    {
-      return $this->cashOnDelivery;
-    }
+	/**
+	 * @var null|string $eveningDelivery
+	 */
+	protected $eveningDelivery;
 
-    /**
-     * @param CashOnDeliveryRequestType $cashOnDelivery
-     * @return \Bring\ServicesRequestType
-     */
-    public function setCashOnDelivery($cashOnDelivery)
-    {
-      $this->cashOnDelivery = $cashOnDelivery;
-      return $this;
-    }
+	
+	public function __construct()
+	{
+	
+	}
 
-    /**
-     * @return string
-     */
-    public function getDeliveryOption()
-    {
-      return $this->deliveryOption;
-    }
+	/**
+	 * @return null|RecipientNotificationRequestType
+	 */
+	public function getRecipientNotification(): ?RecipientNotificationRequestType
+	{
+		return $this->recipientNotification;
+	}
 
-    /**
-     * @param string $deliveryOption
-     * @return \Bring\ServicesRequestType
-     */
-    public function setDeliveryOption($deliveryOption)
-    {
-      $this->deliveryOption = $deliveryOption;
-      return $this;
-    }
+	/**
+	 * @param null|RecipientNotificationRequestType $recipientNotification
+	 * @return ServicesRequestType
+	 */
+	public function setRecipientNotification(?RecipientNotificationRequestType $recipientNotification = null): ServicesRequestType
+	{
+		$this->recipientNotification = $recipientNotification;
+		return $this;
+	}
 
-    /**
-     * @return FlexDeliveryRequestType
-     */
-    public function getFlexDelivery()
-    {
-      return $this->flexDelivery;
-    }
+	/**
+	 * @return null|string
+	 */
+	public function getQuickPackEnvelope(): ?string
+	{
+		return $this->quickPackEnvelope;
+	}
 
-    /**
-     * @param FlexDeliveryRequestType $flexDelivery
-     * @return \Bring\ServicesRequestType
-     */
-    public function setFlexDelivery($flexDelivery)
-    {
-      $this->flexDelivery = $flexDelivery;
-      return $this;
-    }
+	/**
+	 * @param null|string $quickPackEnvelope
+	 * @return ServicesRequestType
+	 */
+	public function setQuickPackEnvelope(?string $quickPackEnvelope = null): ServicesRequestType
+	{
+		$this->quickPackEnvelope = $quickPackEnvelope;
+		return $this;
+	}
 
-    /**
-     * @return string
-     */
-    public function getNonFreeze()
-    {
-      return $this->nonFreeze;
-    }
+	/**
+	 * @return null|CashOnDeliveryRequestType
+	 */
+	public function getCashOnDelivery(): ?CashOnDeliveryRequestType
+	{
+		return $this->cashOnDelivery;
+	}
 
-    /**
-     * @param string $nonFreeze
-     * @return \Bring\ServicesRequestType
-     */
-    public function setNonFreeze($nonFreeze)
-    {
-      $this->nonFreeze = $nonFreeze;
-      return $this;
-    }
+	/**
+	 * @param null|CashOnDeliveryRequestType $cashOnDelivery
+	 * @return ServicesRequestType
+	 */
+	public function setCashOnDelivery(?CashOnDeliveryRequestType $cashOnDelivery = null): ServicesRequestType
+	{
+		$this->cashOnDelivery = $cashOnDelivery;
+		return $this;
+	}
 
-    /**
-     * @return string
-     */
-    public function getCustomsClearance()
-    {
-      return $this->customsClearance;
-    }
+	/**
+	 * @return null|string
+	 */
+	public function getDeliveryOption(): ?string
+	{
+		return $this->deliveryOption;
+	}
 
-    /**
-     * @param string $customsClearance
-     * @return \Bring\ServicesRequestType
-     */
-    public function setCustomsClearance($customsClearance)
-    {
-      $this->customsClearance = $customsClearance;
-      return $this;
-    }
+	/**
+	 * @param null|string $deliveryOption
+	 * @return ServicesRequestType
+	 */
+	public function setDeliveryOption(?string $deliveryOption = null): ServicesRequestType
+	{
+		$this->deliveryOption = $deliveryOption;
+		return $this;
+	}
 
-    /**
-     * @return DangerousGoodsRequestType
-     */
-    public function getDangerousGoods()
-    {
-      return $this->dangerousGoods;
-    }
+	/**
+	 * @return null|FlexDeliveryRequestType
+	 */
+	public function getFlexDelivery(): ?FlexDeliveryRequestType
+	{
+		return $this->flexDelivery;
+	}
 
-    /**
-     * @param DangerousGoodsRequestType $dangerousGoods
-     * @return \Bring\ServicesRequestType
-     */
-    public function setDangerousGoods($dangerousGoods)
-    {
-      $this->dangerousGoods = $dangerousGoods;
-      return $this;
-    }
+	/**
+	 * @param null|FlexDeliveryRequestType $flexDelivery
+	 * @return ServicesRequestType
+	 */
+	public function setFlexDelivery(?FlexDeliveryRequestType $flexDelivery = null): ServicesRequestType
+	{
+		$this->flexDelivery = $flexDelivery;
+		return $this;
+	}
 
-    /**
-     * @return string
-     */
-    public function getExpress()
-    {
-      return $this->express;
-    }
+	/**
+	 * @return null|DeliveryIndoorsRequestType
+	 */
+	public function getDeliveryIndoors(): ?DeliveryIndoorsRequestType
+	{
+		return $this->deliveryIndoors;
+	}
 
-    /**
-     * @param string $express
-     * @return \Bring\ServicesRequestType
-     */
-    public function setExpress($express)
-    {
-      $this->express = $express;
-      return $this;
-    }
+	/**
+	 * @param null|DeliveryIndoorsRequestType $deliveryIndoors
+	 * @return ServicesRequestType
+	 */
+	public function setDeliveryIndoors(?DeliveryIndoorsRequestType $deliveryIndoors = null): ServicesRequestType
+	{
+		$this->deliveryIndoors = $deliveryIndoors;
+		return $this;
+	}
 
-    /**
-     * @return string
-     */
-    public function getEveDelivery()
-    {
-      return $this->eveDelivery;
-    }
+	/**
+	 * @return null|string
+	 */
+	public function getPhoneNotification(): ?string
+	{
+		return $this->phoneNotification;
+	}
 
-    /**
-     * @param string $eveDelivery
-     * @return \Bring\ServicesRequestType
-     */
-    public function setEveDelivery($eveDelivery)
-    {
-      $this->eveDelivery = $eveDelivery;
-      return $this;
-    }
+	/**
+	 * @param null|string $phoneNotification
+	 * @return ServicesRequestType
+	 */
+	public function setPhoneNotification(?string $phoneNotification = null): ServicesRequestType
+	{
+		$this->phoneNotification = $phoneNotification;
+		return $this;
+	}
+
+	/**
+	 * @return null|string
+	 */
+	public function getNonFreeze(): ?string
+	{
+		return $this->nonFreeze;
+	}
+
+	/**
+	 * @param null|string $nonFreeze
+	 * @return ServicesRequestType
+	 */
+	public function setNonFreeze(?string $nonFreeze = null): ServicesRequestType
+	{
+		$this->nonFreeze = $nonFreeze;
+		return $this;
+	}
+
+	/**
+	 * @return null|DangerousGoodsRequestType
+	 */
+	public function getDangerousGoods(): ?DangerousGoodsRequestType
+	{
+		return $this->dangerousGoods;
+	}
+
+	/**
+	 * @param null|DangerousGoodsRequestType $dangerousGoods
+	 * @return ServicesRequestType
+	 */
+	public function setDangerousGoods(?DangerousGoodsRequestType $dangerousGoods = null): ServicesRequestType
+	{
+		$this->dangerousGoods = $dangerousGoods;
+		return $this;
+	}
+
+	/**
+	 * @return null|string
+	 */
+	public function getExpress(): ?string
+	{
+		return $this->express;
+	}
+
+	/**
+	 * @param null|string $express
+	 * @return ServicesRequestType
+	 */
+	public function setExpress(?string $express = null): ServicesRequestType
+	{
+		$this->express = $express;
+		return $this;
+	}
+
+	/**
+	 * @return null|string
+	 */
+	public function getAdvisering(): ?string
+	{
+		return $this->advisering;
+	}
+
+	/**
+	 * @param null|string $advisering
+	 * @return ServicesRequestType
+	 */
+	public function setAdvisering(?string $advisering = null): ServicesRequestType
+	{
+		$this->advisering = $advisering;
+		return $this;
+	}
+
+	/**
+	 * @return null|string
+	 */
+	public function getSimpleDelivery(): ?string
+	{
+		return $this->simpleDelivery;
+	}
+
+	/**
+	 * @param null|string $simpleDelivery
+	 * @return ServicesRequestType
+	 */
+	public function setSimpleDelivery(?string $simpleDelivery = null): ServicesRequestType
+	{
+		$this->simpleDelivery = $simpleDelivery;
+		return $this;
+	}
+
+	/**
+	 * @return null|string
+	 */
+	public function getFrigoTemperatureZone(): ?string
+	{
+		return $this->frigoTemperatureZone;
+	}
+
+	/**
+	 * @param null|string $frigoTemperatureZone
+	 * @return ServicesRequestType
+	 */
+	public function setFrigoTemperatureZone(?string $frigoTemperatureZone = null): ServicesRequestType
+	{
+		$this->frigoTemperatureZone = $frigoTemperatureZone;
+		return $this;
+	}
+
+	/**
+	 * @return null|string
+	 */
+	public function getInsurance(): ?string
+	{
+		return $this->insurance;
+	}
+
+	/**
+	 * @param null|string $insurance
+	 * @return ServicesRequestType
+	 */
+	public function setInsurance(?string $insurance = null): ServicesRequestType
+	{
+		$this->insurance = $insurance;
+		return $this;
+	}
+
+	/**
+	 * @return null|string
+	 */
+	public function getLetterNotification(): ?string
+	{
+		return $this->letterNotification;
+	}
+
+	/**
+	 * @param null|string $letterNotification
+	 * @return ServicesRequestType
+	 */
+	public function setLetterNotification(?string $letterNotification = null): ServicesRequestType
+	{
+		$this->letterNotification = $letterNotification;
+		return $this;
+	}
+
+	/**
+	 * @return null|string
+	 */
+	public function getEveningDelivery(): ?string
+	{
+		return $this->eveningDelivery;
+	}
+
+	/**
+	 * @param null|string $eveningDelivery
+	 * @return ServicesRequestType
+	 */
+	public function setEveningDelivery(?string $eveningDelivery = null): ServicesRequestType
+	{
+		$this->eveningDelivery = $eveningDelivery;
+		return $this;
+	}
 
 }

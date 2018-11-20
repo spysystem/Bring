@@ -1,12 +1,15 @@
 <?php
-
 namespace Bring;
 
+
+/**
+ * Class MessageTypeRequestType
+ */
 class MessageTypeRequestType
 {
-    const __default = 'kid';
-    const kid = 'kid';
-    const text = 'text';
+	public const __default = 'kid';
+	public const kid = 'kid';
+	public const text = 'text';
 
 
 }

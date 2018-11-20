@@ -1,12 +1,15 @@
 <?php
-
 namespace Bring;
 
+
+/**
+ * Class AccountType
+ */
 class AccountType
 {
-    const __default = 'bankgiro';
-    const bankgiro = 'bankgiro';
-    const plusgiro = 'plusgiro';
+	public const __default = 'bankgiro';
+	public const bankgiro = 'bankgiro';
+	public const plusgiro = 'plusgiro';
 
 
 }

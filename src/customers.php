@@ -1,39 +1,42 @@
 <?php
-
 namespace Bring;
 
+
+/**
+ * Class customers
+ */
 class customers
 {
 
-    /**
-     * @var CustomerResponseType $customer
-     */
-    protected $customer = null;
+	/**
+	 * @var CustomerResponseType[] $customer
+	 */
+	protected $customer;
 
-    /**
-     * @param CustomerResponseType $customer
-     */
-    public function __construct($customer)
-    {
-      $this->customer = $customer;
-    }
+	/**
+	 * @param CustomerResponseType[] $customer
+	 */
+	public function __construct(array $customer)
+	{
+		$this->customer = $customer;
+	}
 
-    /**
-     * @return CustomerResponseType
-     */
-    public function getCustomer()
-    {
-      return $this->customer;
-    }
+	/**
+	 * @return CustomerResponseType[]
+	 */
+	public function getCustomer(): ?array
+	{
+		return $this->customer;
+	}
 
-    /**
-     * @param CustomerResponseType $customer
-     * @return \Bring\customers
-     */
-    public function setCustomer($customer)
-    {
-      $this->customer = $customer;
-      return $this;
-    }
+	/**
+	 * @param CustomerResponseType[] $customer
+	 * @return customers
+	 */
+	public function setCustomer(array $customer): customers
+	{
+		$this->customer = $customer;
+		return $this;
+	}
 
 }
