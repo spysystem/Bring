@@ -9,7 +9,7 @@ class errors
 {
 
 	/**
-	 * @var null|ErrorResponseType[] $error
+	 * @var null|ErrorResponseType[]|ErrorResponseType $error
 	 */
 	protected $error;
 
@@ -20,18 +20,18 @@ class errors
 	}
 
 	/**
-	 * @return null|ErrorResponseType[]
+	 * @return null|ErrorResponseType[]|ErrorResponseType
 	 */
-	public function getError(): ?array
+	public function getError()
 	{
 		return $this->error;
 	}
 
 	/**
-	 * @param null|ErrorResponseType[] $error
+	 * @param null|ErrorResponseType[]|ErrorResponseType $error
 	 * @return errors
 	 */
-	public function setError(?array $error = null): errors
+	public function setError($error = null): errors
 	{
 		$this->error = $error;
 		return $this;
