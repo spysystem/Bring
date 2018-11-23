@@ -5,7 +5,8 @@
  */
 function autoload_65797fa19198960091bc2c17cfc008ff($class)
 {
-    $classes = array(
+	/** @noinspection ClassConstantCanBeUsedInspection */
+	$classes = array(
         'Bring\BookingService' => __DIR__ .'/BookingService.php',
         'Bring\cargoInformation' => __DIR__ .'/cargoInformation.php',
         'Bring\customerInformation' => __DIR__ .'/customerInformation.php',
@@ -60,8 +61,9 @@ function autoload_65797fa19198960091bc2c17cfc008ff($class)
         'Bring\incotermRule' => __DIR__ .'/incotermRule.php'
     );
     if (!empty($classes[$class])) {
-        include $classes[$class];
-    };
+		/** @noinspection PhpIncludeInspection */
+		include $classes[$class];
+	}
 }
 
 spl_autoload_register('autoload_65797fa19198960091bc2c17cfc008ff');

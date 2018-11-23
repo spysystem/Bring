@@ -9,31 +9,31 @@ class consignments
 {
 
 	/**
-	 * @var ConsignmentResponseType[] $consignment
+	 * @var ConsignmentResponseType[]|ConsignmentRequestType|null $consignment
 	 */
 	protected $consignment;
 
 	/**
-	 * @param ConsignmentResponseType[] $consignment
+	 * @param ConsignmentResponseType[]|ConsignmentRequestType|null $consignment
 	 */
-	public function __construct(array $consignment)
+	public function __construct($consignment)
 	{
 		$this->consignment = $consignment;
 	}
 
 	/**
-	 * @return ConsignmentResponseType[]
+	 * @return ConsignmentResponseType[]|ConsignmentRequestType|null
 	 */
-	public function getConsignment(): ?array
+	public function getConsignment()
 	{
 		return $this->consignment;
 	}
 
 	/**
-	 * @param ConsignmentResponseType[] $consignment
+	 * @param ConsignmentResponseType[]|ConsignmentRequestType|null $consignment
 	 * @return consignments
 	 */
-	public function setConsignment(array $consignment): consignments
+	public function setConsignment($consignment): consignments
 	{
 		$this->consignment = $consignment;
 		return $this;

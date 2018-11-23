@@ -9,31 +9,31 @@ class packages
 {
 
 	/**
-	 * @var PackageResponseType $package
+	 * @var PackageResponseType|PackageResponseType[] $package
 	 */
 	protected $package;
 
 	/**
-	 * @param PackageResponseType $package
+	 * @param PackageResponseType|PackageResponseType[] $package
 	 */
-	public function __construct(PackageResponseType $package)
+	public function __construct($package)
 	{
 		$this->package = $package;
 	}
 
 	/**
-	 * @return PackageResponseType
+	 * @return PackageResponseType|PackageResponseType[]
 	 */
-	public function getPackage(): ?PackageResponseType
+	public function getPackage()
 	{
 		return $this->package;
 	}
 
 	/**
-	 * @param PackageResponseType $package
+	 * @param PackageResponseType|PackageResponseType[] $package
 	 * @return packages
 	 */
-	public function setPackage(PackageResponseType $package): packages
+	public function setPackage($package): packages
 	{
 		$this->package = $package;
 		return $this;

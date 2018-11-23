@@ -120,7 +120,7 @@ class BookingService extends SoapClient
 	 */
 	public function __doRequest($request, $location, $action, $version, $one_way = 0): ?string
 	{
-		$this->request	= $request;
+		$this->request	= (string)$request;
 		
 		return parent::__doRequest($request, $location, $action, $version, $one_way);
 	}
