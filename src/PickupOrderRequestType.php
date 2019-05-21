@@ -7,6 +7,10 @@ namespace Bring;
  */
 class PickupOrderRequestType
 {
+	/**
+	 * @var null|string $service
+	 */
+	protected $service;
 
 	/**
 	 * @var customerInformation $customerInformation
@@ -49,6 +53,11 @@ class PickupOrderRequestType
 	protected $parcelsInternationalInformation;
 
 	/**
+	 * @var pickupDetails $pickupDetails
+	 */
+	protected $pickupDetails;
+
+	/**
 	 * @var bool $testIndicator
 	 */
 	protected $testIndicator;
@@ -60,9 +69,10 @@ class PickupOrderRequestType
 	 * @param parcelsInformation $parcelsInformation
 	 * @param string $countryCode
 	 * @param cargoInformation $cargoInformation
+	 * @param pickupDetails $pickupDetails
 	 * @param bool $testIndicator
 	 */
-	public function __construct(customerInformation $customerInformation, pickupAddress $pickupAddress, string $pickupDate, parcelsInformation $parcelsInformation, string $countryCode, cargoInformation $cargoInformation, bool $testIndicator)
+	public function __construct(customerInformation $customerInformation, pickupAddress $pickupAddress, string $pickupDate, parcelsInformation $parcelsInformation, string $countryCode, cargoInformation $cargoInformation, pickupDetails $pickupDetails, bool $testIndicator)
 	{
 		$this->customerInformation = $customerInformation;
 		$this->pickupAddress = $pickupAddress;
@@ -70,7 +80,26 @@ class PickupOrderRequestType
 		$this->parcelsInformation = $parcelsInformation;
 		$this->countryCode = $countryCode;
 		$this->cargoInformation = $cargoInformation;
+		$this->pickupDetails = $pickupDetails;
 		$this->testIndicator = $testIndicator;
+	}
+
+	/**
+	 * @return null|string
+	 */
+	public function getService(): ?string
+	{
+		return $this->service;
+	}
+
+	/**
+	 * @param null|string $service
+	 * @return PickupOrderRequestType
+	 */
+	public function setService(?string $service = null): PickupOrderRequestType
+	{
+		$this->service = $service;
+		return $this;
 	}
 
 	/**
@@ -214,6 +243,24 @@ class PickupOrderRequestType
 	public function setParcelsInternationalInformation(?parcelsInternationalInformation $parcelsInternationalInformation = null): PickupOrderRequestType
 	{
 		$this->parcelsInternationalInformation = $parcelsInternationalInformation;
+		return $this;
+	}
+
+	/**
+	 * @return pickupDetails
+	 */
+	public function getPickupDetails(): ?pickupDetails
+	{
+		return $this->pickupDetails;
+	}
+
+	/**
+	 * @param pickupDetails $pickupDetails
+	 * @return PickupOrderRequestType
+	 */
+	public function setPickupDetails(pickupDetails $pickupDetails): PickupOrderRequestType
+	{
+		$this->pickupDetails = $pickupDetails;
 		return $this;
 	}
 

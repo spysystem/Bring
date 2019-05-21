@@ -34,6 +34,11 @@ class PartiesRequestType
 	protected $pickupPoint;
 
 	/**
+	 * @var null|PartyRequestType $importer
+	 */
+	protected $importer;
+
+	/**
 	 * @param PartyRequestType $sender
 	 * @param PartyRequestType $recipient
 	 */
@@ -130,6 +135,24 @@ class PartiesRequestType
 	public function setPickupPoint(?PickupPointRequestType $pickupPoint = null): PartiesRequestType
 	{
 		$this->pickupPoint = $pickupPoint;
+		return $this;
+	}
+
+	/**
+	 * @return null|PartyRequestType
+	 */
+	public function getImporter(): ?PartyRequestType
+	{
+		return $this->importer;
+	}
+
+	/**
+	 * @param null|PartyRequestType $importer
+	 * @return PartiesRequestType
+	 */
+	public function setImporter(?PartyRequestType $importer = null): PartiesRequestType
+	{
+		$this->importer = $importer;
 		return $this;
 	}
 

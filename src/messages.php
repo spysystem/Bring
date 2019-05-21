@@ -9,12 +9,12 @@ class messages
 {
 
 	/**
-	 * @var MessageResponseType[]|MessageResponseType|null $message
+	 * @var PickupApiMessageResponseType[]|PickupApiMessageResponseType|null $message
 	 */
 	protected $message;
 
 	/**
-	 * @param MessageResponseType[]|MessageResponseType|null $message
+	 * @param PickupApiMessageResponseType[]|PickupApiMessageResponseType|null $message
 	 */
 	public function __construct($message)
 	{
@@ -22,7 +22,7 @@ class messages
 	}
 
 	/**
-	 * @return MessageResponseType[]|MessageResponseType|null
+	 * @return PickupApiMessageResponseType[]|PickupApiMessageResponseType|null
 	 */
 	public function getMessage()
 	{
@@ -30,7 +30,7 @@ class messages
 	}
 
 	/**
-	 * @param MessageResponseType[]|MessageResponseType|null $message
+	 * @param PickupApiMessageResponseType[]|PickupApiMessageResponseType|null $message
 	 * @return messages
 	 */
 	public function setMessage($message): messages

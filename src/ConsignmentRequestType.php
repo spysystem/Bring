@@ -31,12 +31,12 @@ class ConsignmentRequestType
 	protected $purchaseOrder;
 
 	/**
-	 * @var PackagesRequestType $packages
+	 * @var null|PackagesRequestType $packages
 	 */
 	protected $packages;
 
 	/**
-	 * @var PackageGroupsRequestType $packageGroups
+	 * @var null|PackageGroupsRequestType $packageGroups
 	 */
 	protected $packageGroups;
 
@@ -49,17 +49,13 @@ class ConsignmentRequestType
 	 * @param DateTime $shippingDateTime
 	 * @param PartiesRequestType $parties
 	 * @param ProductRequestType $product
-	 * @param PackagesRequestType $packages
-	 * @param PackageGroupsRequestType $packageGroups
 	 * @param string $correlationId
 	 */
-	public function __construct(DateTime $shippingDateTime, PartiesRequestType $parties, ProductRequestType $product, PackagesRequestType $packages, PackageGroupsRequestType $packageGroups, string $correlationId)
+	public function __construct(DateTime $shippingDateTime, PartiesRequestType $parties, ProductRequestType $product, string $correlationId)
 	{
 		$this->shippingDateTime = $shippingDateTime->format(DateTime::ATOM);
 		$this->parties = $parties;
 		$this->product = $product;
-		$this->packages = $packages;
-		$this->packageGroups = $packageGroups;
 		$this->correlationId = $correlationId;
 	}
 
@@ -147,7 +143,7 @@ class ConsignmentRequestType
 	}
 
 	/**
-	 * @return PackagesRequestType
+	 * @return null|PackagesRequestType
 	 */
 	public function getPackages(): ?PackagesRequestType
 	{
@@ -155,17 +151,17 @@ class ConsignmentRequestType
 	}
 
 	/**
-	 * @param PackagesRequestType $packages
+	 * @param null|PackagesRequestType $packages
 	 * @return ConsignmentRequestType
 	 */
-	public function setPackages(PackagesRequestType $packages): ConsignmentRequestType
+	public function setPackages(?PackagesRequestType $packages = null): ConsignmentRequestType
 	{
 		$this->packages = $packages;
 		return $this;
 	}
 
 	/**
-	 * @return PackageGroupsRequestType
+	 * @return null|PackageGroupsRequestType
 	 */
 	public function getPackageGroups(): ?PackageGroupsRequestType
 	{
@@ -173,10 +169,10 @@ class ConsignmentRequestType
 	}
 
 	/**
-	 * @param PackageGroupsRequestType $packageGroups
+	 * @param null|PackageGroupsRequestType $packageGroups
 	 * @return ConsignmentRequestType
 	 */
-	public function setPackageGroups(PackageGroupsRequestType $packageGroups): ConsignmentRequestType
+	public function setPackageGroups(?PackageGroupsRequestType $packageGroups = null): ConsignmentRequestType
 	{
 		$this->packageGroups = $packageGroups;
 		return $this;

@@ -34,6 +34,11 @@ class pickupAddress
 	protected $city;
 
 	/**
+	 * @var null|string $contactName
+	 */
+	protected $contactName;
+
+	/**
 	 * @var null|string $messageToDriver
 	 */
 	protected $messageToDriver;
@@ -141,6 +146,24 @@ class pickupAddress
 	public function setCity(string $city): pickupAddress
 	{
 		$this->city = $city;
+		return $this;
+	}
+
+	/**
+	 * @return null|string
+	 */
+	public function getContactName(): ?string
+	{
+		return $this->contactName;
+	}
+
+	/**
+	 * @param null|string $contactName
+	 * @return pickupAddress
+	 */
+	public function setContactName(?string $contactName = null): pickupAddress
+	{
+		$this->contactName = $contactName;
 		return $this;
 	}
 

@@ -69,14 +69,19 @@ class ServicesRequestType
 	protected $simpleDelivery;
 
 	/**
-	 * @var null|string $frigoTemperatureZone
+	 * @var null|string|FrigoTemperatureZoneRequestType $temperatureZone
 	 */
-	protected $frigoTemperatureZone;
+	protected $temperatureZone;
 
 	/**
 	 * @var null|string $insurance
 	 */
 	protected $insurance;
+
+	/**
+	 * @var null|string $saturdayDelivery
+	 */
+	protected $saturdayDelivery;
 
 	/**
 	 * @var null|string $letterNotification
@@ -311,20 +316,20 @@ class ServicesRequestType
 	}
 
 	/**
-	 * @return null|string
+	 * @return null|string|FrigoTemperatureZoneRequestType
 	 */
-	public function getFrigoTemperatureZone(): ?string
+	public function getTemperatureZone()
 	{
-		return $this->frigoTemperatureZone;
+		return $this->temperatureZone;
 	}
 
 	/**
-	 * @param null|string $frigoTemperatureZone
+	 * @param null|string|FrigoTemperatureZoneRequestType $temperatureZone
 	 * @return ServicesRequestType
 	 */
-	public function setFrigoTemperatureZone(?string $frigoTemperatureZone = null): ServicesRequestType
+	public function setTemperatureZone($temperatureZone): ServicesRequestType
 	{
-		$this->frigoTemperatureZone = $frigoTemperatureZone;
+		$this->temperatureZone = $temperatureZone;
 		return $this;
 	}
 
@@ -343,6 +348,24 @@ class ServicesRequestType
 	public function setInsurance(?string $insurance = null): ServicesRequestType
 	{
 		$this->insurance = $insurance;
+		return $this;
+	}
+
+	/**
+	 * @return null|string
+	 */
+	public function getSaturdayDelivery(): ?string
+	{
+		return $this->saturdayDelivery;
+	}
+
+	/**
+	 * @param null|string $saturdayDelivery
+	 * @return ServicesRequestType
+	 */
+	public function setSaturdayDelivery(?string $saturdayDelivery = null): ServicesRequestType
+	{
+		$this->saturdayDelivery = $saturdayDelivery;
 		return $this;
 	}
 

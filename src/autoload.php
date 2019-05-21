@@ -12,6 +12,7 @@ function autoload_65797fa19198960091bc2c17cfc008ff($class)
         'Bring\customerInformation' => __DIR__ .'/customerInformation.php',
         'Bring\parcelsInformation' => __DIR__ .'/parcelsInformation.php',
         'Bring\pickupAddress' => __DIR__ .'/pickupAddress.php',
+        'Bring\pickupDetails' => __DIR__ .'/pickupDetails.php',
         'Bring\BookingRequestType' => __DIR__ .'/BookingRequestType.php',
         'Bring\consignments' => __DIR__ .'/consignments.php',
         'Bring\ConsignmentRequestType' => __DIR__ .'/ConsignmentRequestType.php',
@@ -20,6 +21,8 @@ function autoload_65797fa19198960091bc2c17cfc008ff($class)
         'Bring\ContactRequestType' => __DIR__ .'/ContactRequestType.php',
         'Bring\PickupPointRequestType' => __DIR__ .'/PickupPointRequestType.php',
         'Bring\ProductRequestType' => __DIR__ .'/ProductRequestType.php',
+        'Bring\additionalServices' => __DIR__ .'/additionalServices.php',
+        'Bring\ediCustomsDeclarations' => __DIR__ .'/ediCustomsDeclarations.php',
         'Bring\ServicesRequestType' => __DIR__ .'/ServicesRequestType.php',
         'Bring\RecipientNotificationRequestType' => __DIR__ .'/RecipientNotificationRequestType.php',
         'Bring\CashOnDeliveryRequestType' => __DIR__ .'/CashOnDeliveryRequestType.php',
@@ -27,6 +30,7 @@ function autoload_65797fa19198960091bc2c17cfc008ff($class)
         'Bring\FlexDeliveryRequestType' => __DIR__ .'/FlexDeliveryRequestType.php',
         'Bring\DeliveryIndoorsRequestType' => __DIR__ .'/DeliveryIndoorsRequestType.php',
         'Bring\DangerousGoodsRequestType' => __DIR__ .'/DangerousGoodsRequestType.php',
+        'Bring\AdditionalServiceRequestType' => __DIR__ .'/AdditionalServiceRequestType.php',
         'Bring\CustomsDeclarationRequestType' => __DIR__ .'/CustomsDeclarationRequestType.php',
         'Bring\PurchaseOrderRequestType' => __DIR__ .'/PurchaseOrderRequestType.php',
         'Bring\PackagesRequestType' => __DIR__ .'/PackagesRequestType.php',
@@ -34,6 +38,7 @@ function autoload_65797fa19198960091bc2c17cfc008ff($class)
         'Bring\MeasurementsRequestType' => __DIR__ .'/MeasurementsRequestType.php',
         'Bring\PackageGroupsRequestType' => __DIR__ .'/PackageGroupsRequestType.php',
         'Bring\PackageGroupRequestType' => __DIR__ .'/PackageGroupRequestType.php',
+        'Bring\EDICustomsDeclarationRequestType' => __DIR__ .'/EDICustomsDeclarationRequestType.php',
         'Bring\BookingResponseType' => __DIR__ .'/BookingResponseType.php',
         'Bring\ConsignmentResponseType' => __DIR__ .'/ConsignmentResponseType.php',
         'Bring\errors' => __DIR__ .'/errors.php',
@@ -55,10 +60,15 @@ function autoload_65797fa19198960091bc2c17cfc008ff($class)
         'Bring\parcelsInternationalInformation' => __DIR__ .'/parcelsInternationalInformation.php',
         'Bring\PickupOrderResponseType' => __DIR__ .'/PickupOrderResponseType.php',
         'Bring\PickupConfirmationType' => __DIR__ .'/PickupConfirmationType.php',
+        'Bring\PickupApiErrorResponseType' => __DIR__ .'/PickupApiErrorResponseType.php',
+        'Bring\PickupApiMessageResponseType' => __DIR__ .'/PickupApiMessageResponseType.php',
         'Bring\AccountType' => __DIR__ .'/AccountType.php',
         'Bring\MessageTypeRequestType' => __DIR__ .'/MessageTypeRequestType.php',
+        'Bring\FrigoTemperatureZoneRequestType' => __DIR__ .'/FrigoTemperatureZoneRequestType.php',
+        'Bring\AdditionalServiceCodeType' => __DIR__ .'/AdditionalServiceCodeType.php',
         'Bring\whoPaysInvoice' => __DIR__ .'/whoPaysInvoice.php',
-        'Bring\incotermRule' => __DIR__ .'/incotermRule.php'
+        'Bring\incotermRule' => __DIR__ .'/incotermRule.php',
+        'Bring\NatureOfTransaction' => __DIR__ .'/NatureOfTransaction.php'
     );
     if (!empty($classes[$class])) {
 		/** @noinspection PhpIncludeInspection */

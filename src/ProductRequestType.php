@@ -24,6 +24,11 @@ class ProductRequestType
 	protected $services;
 
 	/**
+	 * @var null|additionalServices $additionalServices
+	 */
+	protected $additionalServices;
+
+	/**
 	 * @var null|CustomsDeclarationRequestType $customsDeclaration
 	 */
 	protected $customsDeclaration;
@@ -42,6 +47,11 @@ class ProductRequestType
 	 * @var null|string|incotermRule $incotermRule
 	 */
 	protected $incotermRule;
+
+	/**
+	 * @var null|ediCustomsDeclarations $ediCustomsDeclarations
+	 */
+	protected $ediCustomsDeclarations;
 
 	/**
 	 * @param string $id
@@ -104,6 +114,24 @@ class ProductRequestType
 	public function setServices(?ServicesRequestType $services = null): ProductRequestType
 	{
 		$this->services = $services;
+		return $this;
+	}
+
+	/**
+	 * @return null|additionalServices
+	 */
+	public function getAdditionalServices(): ?additionalServices
+	{
+		return $this->additionalServices;
+	}
+
+	/**
+	 * @param null|additionalServices $additionalServices
+	 * @return ProductRequestType
+	 */
+	public function setAdditionalServices(?additionalServices $additionalServices = null): ProductRequestType
+	{
+		$this->additionalServices = $additionalServices;
 		return $this;
 	}
 
@@ -176,6 +204,24 @@ class ProductRequestType
 	public function setIncotermRule($incotermRule): ProductRequestType
 	{
 		$this->incotermRule = $incotermRule;
+		return $this;
+	}
+
+	/**
+	 * @return null|ediCustomsDeclarations
+	 */
+	public function getEdiCustomsDeclarations(): ?ediCustomsDeclarations
+	{
+		return $this->ediCustomsDeclarations;
+	}
+
+	/**
+	 * @param null|ediCustomsDeclarations $ediCustomsDeclarations
+	 * @return ProductRequestType
+	 */
+	public function setEdiCustomsDeclarations(?ediCustomsDeclarations $ediCustomsDeclarations = null): ProductRequestType
+	{
+		$this->ediCustomsDeclarations = $ediCustomsDeclarations;
 		return $this;
 	}
 
