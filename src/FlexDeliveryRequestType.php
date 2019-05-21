@@ -9,20 +9,18 @@ class FlexDeliveryRequestType
 {
 
 	/**
-	 * @var string $message
+	 * @var null|string $message
 	 */
 	protected $message;
 
-	/**
-	 * @param string $message
-	 */
-	public function __construct(string $message)
+	
+	public function __construct()
 	{
-		$this->message = $message;
+	
 	}
 
 	/**
-	 * @return string
+	 * @return null|string
 	 */
 	public function getMessage(): ?string
 	{
@@ -30,10 +28,10 @@ class FlexDeliveryRequestType
 	}
 
 	/**
-	 * @param string $message
+	 * @param null|string $message
 	 * @return FlexDeliveryRequestType
 	 */
-	public function setMessage(string $message): FlexDeliveryRequestType
+	public function setMessage(?string $message = null): FlexDeliveryRequestType
 	{
 		$this->message = $message;
 		return $this;

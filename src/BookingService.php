@@ -23,6 +23,7 @@ class BookingService extends SoapClient
 		'customerInformation'				=> customerInformation::class,
 		'parcelsInformation'				=> parcelsInformation::class,
 		'pickupAddress'						=> pickupAddress::class,
+		'pickupDetails'						=> pickupDetails::class,
 		'BookingRequestType'				=> BookingRequestType::class,
 		'consignments'						=> consignments::class,
 		'ConsignmentRequestType'			=> ConsignmentRequestType::class,
@@ -31,6 +32,8 @@ class BookingService extends SoapClient
 		'ContactRequestType'				=> ContactRequestType::class,
 		'PickupPointRequestType'			=> PickupPointRequestType::class,
 		'ProductRequestType'				=> ProductRequestType::class,
+		'additionalServices'				=> additionalServices::class,
+		'ediCustomsDeclarations'			=> ediCustomsDeclarations::class,
 		'ServicesRequestType'				=> ServicesRequestType::class,
 		'RecipientNotificationRequestType'	=> RecipientNotificationRequestType::class,
 		'CashOnDeliveryRequestType'			=> CashOnDeliveryRequestType::class,
@@ -38,6 +41,7 @@ class BookingService extends SoapClient
 		'FlexDeliveryRequestType'			=> FlexDeliveryRequestType::class,
 		'DeliveryIndoorsRequestType'		=> DeliveryIndoorsRequestType::class,
 		'DangerousGoodsRequestType'			=> DangerousGoodsRequestType::class,
+		'AdditionalServiceRequestType'		=> AdditionalServiceRequestType::class,
 		'CustomsDeclarationRequestType'		=> CustomsDeclarationRequestType::class,
 		'PurchaseOrderRequestType'			=> PurchaseOrderRequestType::class,
 		'PackagesRequestType'				=> PackagesRequestType::class,
@@ -45,6 +49,7 @@ class BookingService extends SoapClient
 		'MeasurementsRequestType'			=> MeasurementsRequestType::class,
 		'PackageGroupsRequestType'			=> PackageGroupsRequestType::class,
 		'PackageGroupRequestType'			=> PackageGroupRequestType::class,
+		'EDICustomsDeclarationRequestType'	=> EDICustomsDeclarationRequestType::class,
 		'BookingResponseType'				=> BookingResponseType::class,
 		'ConsignmentResponseType'			=> ConsignmentResponseType::class,
 		'errors'							=> errors::class,
@@ -66,6 +71,8 @@ class BookingService extends SoapClient
 		'parcelsInternationalInformation'	=> parcelsInternationalInformation::class,
 		'PickupOrderResponseType'			=> PickupOrderResponseType::class,
 		'PickupConfirmationType'			=> PickupConfirmationType::class,
+		'PickupApiErrorResponseType'		=> PickupApiErrorResponseType::class,
+		'PickupApiMessageResponseType'		=> PickupApiMessageResponseType::class,
 	];
 
 	/**
@@ -120,7 +127,7 @@ class BookingService extends SoapClient
 	 */
 	public function __doRequest($request, $location, $action, $version, $one_way = 0): ?string
 	{
-		$this->request	= (string)$request;
+		$this->request	= $request;
 		
 		return parent::__doRequest($request, $location, $action, $version, $one_way);
 	}

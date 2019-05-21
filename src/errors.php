@@ -9,7 +9,7 @@ class errors
 {
 
 	/**
-	 * @var null|ErrorResponseType[]|ErrorResponseType $error
+	 * @var null|PickupApiErrorResponseType[]|PickupApiErrorResponseType $error
 	 */
 	protected $error;
 
@@ -20,7 +20,7 @@ class errors
 	}
 
 	/**
-	 * @return null|ErrorResponseType[]|ErrorResponseType
+	 * @return null|PickupApiErrorResponseType[]|PickupApiErrorResponseType
 	 */
 	public function getError()
 	{
@@ -28,7 +28,7 @@ class errors
 	}
 
 	/**
-	 * @param null|ErrorResponseType[]|ErrorResponseType $error
+	 * @param null|PickupApiErrorResponseType[]|PickupApiErrorResponseType $error
 	 * @return errors
 	 */
 	public function setError($error = null): errors

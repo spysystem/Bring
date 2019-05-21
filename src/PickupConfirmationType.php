@@ -26,6 +26,11 @@ class PickupConfirmationType
 	protected $latestPickupDate;
 
 	/**
+	 * @var null|string $url
+	 */
+	protected $url;
+
+	/**
 	 * @param string $status
 	 * @param DateTime $earliestPickupDate
 	 */
@@ -115,6 +120,24 @@ class PickupConfirmationType
 		{
 			$this->latestPickupDate = $latestPickupDate->format(DateTime::ATOM);
 		}
+		return $this;
+	}
+
+	/**
+	 * @return null|string
+	 */
+	public function getUrl(): ?string
+	{
+		return $this->url;
+	}
+
+	/**
+	 * @param null|string $url
+	 * @return PickupConfirmationType
+	 */
+	public function setUrl(?string $url = null): PickupConfirmationType
+	{
+		$this->url = $url;
 		return $this;
 	}
 
