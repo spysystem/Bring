@@ -67,7 +67,8 @@ function autoload_65797fa19198960091bc2c17cfc008ff($class)
         'Bring\FrigoTemperatureZoneRequestType' => __DIR__ .'/FrigoTemperatureZoneRequestType.php',
         'Bring\AdditionalServiceCodeType' => __DIR__ .'/AdditionalServiceCodeType.php',
         'Bring\whoPaysInvoice' => __DIR__ .'/whoPaysInvoice.php',
-        'Bring\incotermRule' => __DIR__ .'/incotermRule.php'
+        'Bring\incotermRule' => __DIR__ .'/incotermRule.php',
+        'Bring\NatureOfTransaction' => __DIR__ .'/NatureOfTransaction.php'
     );
     if (!empty($classes[$class])) {
 		/** @noinspection PhpIncludeInspection */

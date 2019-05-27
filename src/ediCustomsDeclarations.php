@@ -9,18 +9,45 @@ class ediCustomsDeclarations
 {
 
 	/**
-	 * @var null|EDICustomsDeclarationRequestType[] $ediCustomsDeclaration
+	 * @var string|NatureOfTransaction $natureOfTransaction
+	 */
+	protected $natureOfTransaction;
+
+	/**
+	 * @var EDICustomsDeclarationRequestType[] $ediCustomsDeclaration
 	 */
 	protected $ediCustomsDeclaration;
 
-	
-	public function __construct()
+	/**
+	 * @param string|NatureOfTransaction $natureOfTransaction
+	 * @param EDICustomsDeclarationRequestType[] $ediCustomsDeclaration
+	 */
+	public function __construct($natureOfTransaction, array $ediCustomsDeclaration)
 	{
-	
+		$this->natureOfTransaction = $natureOfTransaction;
+		$this->ediCustomsDeclaration = $ediCustomsDeclaration;
 	}
 
 	/**
-	 * @return null|EDICustomsDeclarationRequestType[]
+	 * @return string|NatureOfTransaction
+	 */
+	public function getNatureOfTransaction()
+	{
+		return $this->natureOfTransaction;
+	}
+
+	/**
+	 * @param string|NatureOfTransaction $natureOfTransaction
+	 * @return ediCustomsDeclarations
+	 */
+	public function setNatureOfTransaction($natureOfTransaction): ediCustomsDeclarations
+	{
+		$this->natureOfTransaction = $natureOfTransaction;
+		return $this;
+	}
+
+	/**
+	 * @return EDICustomsDeclarationRequestType[]
 	 */
 	public function getEdiCustomsDeclaration(): ?array
 	{
@@ -28,10 +55,10 @@ class ediCustomsDeclarations
 	}
 
 	/**
-	 * @param null|EDICustomsDeclarationRequestType[] $ediCustomsDeclaration
+	 * @param EDICustomsDeclarationRequestType[] $ediCustomsDeclaration
 	 * @return ediCustomsDeclarations
 	 */
-	public function setEdiCustomsDeclaration(?array $ediCustomsDeclaration = null): ediCustomsDeclarations
+	public function setEdiCustomsDeclaration(array $ediCustomsDeclaration): ediCustomsDeclarations
 	{
 		$this->ediCustomsDeclaration = $ediCustomsDeclaration;
 		return $this;
