@@ -14,17 +14,24 @@ class ediCustomsDeclarations
 	protected $natureOfTransaction;
 
 	/**
+	 * @var string $otherNatureOfTransactionDescription
+	 */
+	protected $otherNatureOfTransactionDescription;
+
+	/**
 	 * @var EDICustomsDeclarationRequestType[] $ediCustomsDeclaration
 	 */
 	protected $ediCustomsDeclaration;
 
 	/**
 	 * @param string|NatureOfTransaction $natureOfTransaction
+	 * @param string $otherNatureOfTransactionDescription
 	 * @param EDICustomsDeclarationRequestType[] $ediCustomsDeclaration
 	 */
-	public function __construct($natureOfTransaction, array $ediCustomsDeclaration)
+	public function __construct($natureOfTransaction, string $otherNatureOfTransactionDescription, array $ediCustomsDeclaration)
 	{
 		$this->natureOfTransaction = $natureOfTransaction;
+		$this->otherNatureOfTransactionDescription = $otherNatureOfTransactionDescription;
 		$this->ediCustomsDeclaration = $ediCustomsDeclaration;
 	}
 
@@ -43,6 +50,24 @@ class ediCustomsDeclarations
 	public function setNatureOfTransaction($natureOfTransaction): ediCustomsDeclarations
 	{
 		$this->natureOfTransaction = $natureOfTransaction;
+		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getOtherNatureOfTransactionDescription(): ?string
+	{
+		return $this->otherNatureOfTransactionDescription;
+	}
+
+	/**
+	 * @param string $otherNatureOfTransactionDescription
+	 * @return ediCustomsDeclarations
+	 */
+	public function setOtherNatureOfTransactionDescription(string $otherNatureOfTransactionDescription): ediCustomsDeclarations
+	{
+		$this->otherNatureOfTransactionDescription = $otherNatureOfTransactionDescription;
 		return $this;
 	}
 
