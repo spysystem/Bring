@@ -19,6 +19,11 @@ class ediCustomsDeclarations
 	protected $otherNatureOfTransactionDescription;
 
 	/**
+	 * @var string $vatOnEcommerce
+	 */
+	protected $vatOnEcommerce;
+
+	/**
 	 * @var EDICustomsDeclarationRequestType[] $ediCustomsDeclaration
 	 */
 	protected $ediCustomsDeclaration;
@@ -26,12 +31,14 @@ class ediCustomsDeclarations
 	/**
 	 * @param string|NatureOfTransaction $natureOfTransaction
 	 * @param string $otherNatureOfTransactionDescription
+	 * @param string $vatOnEcommerce
 	 * @param EDICustomsDeclarationRequestType[] $ediCustomsDeclaration
 	 */
-	public function __construct($natureOfTransaction, string $otherNatureOfTransactionDescription, array $ediCustomsDeclaration)
+	public function __construct($natureOfTransaction, string $otherNatureOfTransactionDescription, string $vatOnEcommerce, array $ediCustomsDeclaration)
 	{
 		$this->natureOfTransaction = $natureOfTransaction;
 		$this->otherNatureOfTransactionDescription = $otherNatureOfTransactionDescription;
+		$this->vatOnEcommerce = $vatOnEcommerce;
 		$this->ediCustomsDeclaration = $ediCustomsDeclaration;
 	}
 
@@ -68,6 +75,24 @@ class ediCustomsDeclarations
 	public function setOtherNatureOfTransactionDescription(string $otherNatureOfTransactionDescription): ediCustomsDeclarations
 	{
 		$this->otherNatureOfTransactionDescription = $otherNatureOfTransactionDescription;
+		return $this;
+	}
+
+	/**
+	 * @return string|null
+	 */
+	public function getVatOnEcommerce(): ?string
+	{
+		return $this->vatOnEcommerce;
+	}
+
+	/**
+	 * @param string $vatOnEcommerce
+	 * @return ediCustomsDeclarations
+	 */
+	public function setVatOnEcommerce(string $vatOnEcommerce): ediCustomsDeclarations
+	{
+		$this->vatOnEcommerce = $vatOnEcommerce;
 		return $this;
 	}
 

@@ -42,7 +42,6 @@ class BookingService extends SoapClient
 		'DeliveryIndoorsRequestType'		=> DeliveryIndoorsRequestType::class,
 		'DangerousGoodsRequestType'			=> DangerousGoodsRequestType::class,
 		'AdditionalServiceRequestType'		=> AdditionalServiceRequestType::class,
-		'CustomsDeclarationRequestType'		=> CustomsDeclarationRequestType::class,
 		'PurchaseOrderRequestType'			=> PurchaseOrderRequestType::class,
 		'PackagesRequestType'				=> PackagesRequestType::class,
 		'PackageRequestType'				=> PackageRequestType::class,

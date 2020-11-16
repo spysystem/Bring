@@ -69,11 +69,6 @@ class ServicesRequestType
 	protected $simpleDelivery;
 
 	/**
-	 * @var null|string|FrigoTemperatureZoneRequestType $temperatureZone
-	 */
-	protected $temperatureZone;
-
-	/**
 	 * @var null|string $insurance
 	 */
 	protected $insurance;
@@ -312,24 +307,6 @@ class ServicesRequestType
 	public function setSimpleDelivery(?string $simpleDelivery = null): ServicesRequestType
 	{
 		$this->simpleDelivery = $simpleDelivery;
-		return $this;
-	}
-
-	/**
-	 * @return null|string|FrigoTemperatureZoneRequestType
-	 */
-	public function getTemperatureZone()
-	{
-		return $this->temperatureZone;
-	}
-
-	/**
-	 * @param null|string|FrigoTemperatureZoneRequestType $temperatureZone
-	 * @return ServicesRequestType
-	 */
-	public function setTemperatureZone($temperatureZone): ServicesRequestType
-	{
-		$this->temperatureZone = $temperatureZone;
 		return $this;
 	}
 

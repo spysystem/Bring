@@ -9,7 +9,7 @@ class PackageRequestType
 {
 
 	/**
-	 * @var float $weightInKg
+	 * @var null|float $weightInKg
 	 */
 	protected $weightInKg;
 
@@ -64,17 +64,15 @@ class PackageRequestType
 	protected $correlationId;
 
 	/**
-	 * @param float $weightInKg
 	 * @param string $correlationId
 	 */
-	public function __construct(float $weightInKg, string $correlationId)
+	public function __construct(string $correlationId)
 	{
-		$this->weightInKg = $weightInKg;
 		$this->correlationId = $correlationId;
 	}
 
 	/**
-	 * @return float
+	 * @return null|float
 	 */
 	public function getWeightInKg(): ?float
 	{
@@ -82,10 +80,10 @@ class PackageRequestType
 	}
 
 	/**
-	 * @param float $weightInKg
+	 * @param null|float $weightInKg
 	 * @return PackageRequestType
 	 */
-	public function setWeightInKg(float $weightInKg): PackageRequestType
+	public function setWeightInKg(?float $weightInKg = null): PackageRequestType
 	{
 		$this->weightInKg = $weightInKg;
 		return $this;

@@ -14,6 +14,11 @@ class ProductRequestType
 	protected $id;
 
 	/**
+	 * @var null|string $nonStandardCourierProductCode
+	 */
+	protected $nonStandardCourierProductCode;
+
+	/**
 	 * @var string $customerNumber
 	 */
 	protected $customerNumber;
@@ -24,14 +29,14 @@ class ProductRequestType
 	protected $services;
 
 	/**
+	 * @var null|bool $explicitAdditionalServices
+	 */
+	protected $explicitAdditionalServices;
+
+	/**
 	 * @var null|additionalServices $additionalServices
 	 */
 	protected $additionalServices;
-
-	/**
-	 * @var null|CustomsDeclarationRequestType $customsDeclaration
-	 */
-	protected $customsDeclaration;
 
 	/**
 	 * @var null|string $messageForRecipient
@@ -82,6 +87,24 @@ class ProductRequestType
 	}
 
 	/**
+	 * @return null|string
+	 */
+	public function getNonStandardCourierProductCode(): ?string
+	{
+		return $this->nonStandardCourierProductCode;
+	}
+
+	/**
+	 * @param null|string $nonStandardCourierProductCode
+	 * @return ProductRequestType
+	 */
+	public function setNonStandardCourierProductCode(?string $nonStandardCourierProductCode = null): ProductRequestType
+	{
+		$this->nonStandardCourierProductCode = $nonStandardCourierProductCode;
+		return $this;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getCustomerNumber(): ?string
@@ -118,6 +141,24 @@ class ProductRequestType
 	}
 
 	/**
+	 * @return null|bool
+	 */
+	public function getExplicitAdditionalServices(): ?bool
+	{
+		return $this->explicitAdditionalServices;
+	}
+
+	/**
+	 * @param null|bool $explicitAdditionalServices
+	 * @return ProductRequestType
+	 */
+	public function setExplicitAdditionalServices(?bool $explicitAdditionalServices = null): ProductRequestType
+	{
+		$this->explicitAdditionalServices = $explicitAdditionalServices;
+		return $this;
+	}
+
+	/**
 	 * @return null|additionalServices
 	 */
 	public function getAdditionalServices(): ?additionalServices
@@ -132,24 +173,6 @@ class ProductRequestType
 	public function setAdditionalServices(?additionalServices $additionalServices = null): ProductRequestType
 	{
 		$this->additionalServices = $additionalServices;
-		return $this;
-	}
-
-	/**
-	 * @return null|CustomsDeclarationRequestType
-	 */
-	public function getCustomsDeclaration(): ?CustomsDeclarationRequestType
-	{
-		return $this->customsDeclaration;
-	}
-
-	/**
-	 * @param null|CustomsDeclarationRequestType $customsDeclaration
-	 * @return ProductRequestType
-	 */
-	public function setCustomsDeclaration(?CustomsDeclarationRequestType $customsDeclaration = null): ProductRequestType
-	{
-		$this->customsDeclaration = $customsDeclaration;
 		return $this;
 	}
 

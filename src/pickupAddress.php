@@ -44,6 +44,11 @@ class pickupAddress
 	protected $messageToDriver;
 
 	/**
+	 * @var null|string $deliveryInstructionToDriver
+	 */
+	protected $deliveryInstructionToDriver;
+
+	/**
 	 * @param string $street
 	 * @param string $postalCode
 	 * @param string $email
@@ -182,6 +187,24 @@ class pickupAddress
 	public function setMessageToDriver(?string $messageToDriver = null): pickupAddress
 	{
 		$this->messageToDriver = $messageToDriver;
+		return $this;
+	}
+
+	/**
+	 * @return null|string
+	 */
+	public function getDeliveryInstructionToDriver(): ?string
+	{
+		return $this->deliveryInstructionToDriver;
+	}
+
+	/**
+	 * @param null|string $deliveryInstructionToDriver
+	 * @return pickupAddress
+	 */
+	public function setDeliveryInstructionToDriver(?string $deliveryInstructionToDriver = null): pickupAddress
+	{
+		$this->deliveryInstructionToDriver = $deliveryInstructionToDriver;
 		return $this;
 	}
 

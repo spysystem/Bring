@@ -16,6 +16,11 @@ class ConsignmentRequestType
 	protected $shippingDateTime;
 
 	/**
+	 * @var null|DateTime $customerSpecifiedDeliveryDateTime
+	 */
+	protected $customerSpecifiedDeliveryDateTime;
+
+	/**
 	 * @var PartiesRequestType $parties
 	 */
 	protected $parties;
@@ -39,6 +44,11 @@ class ConsignmentRequestType
 	 * @var null|PackageGroupsRequestType $packageGroups
 	 */
 	protected $packageGroups;
+
+	/**
+	 * @var null|bool $generateQrCodes
+	 */
+	protected $generateQrCodes;
 
 	/**
 	 * @var string $correlationId
@@ -85,6 +95,42 @@ class ConsignmentRequestType
 	public function setShippingDateTime(DateTime $shippingDateTime): ConsignmentRequestType
 	{
 		$this->shippingDateTime = $shippingDateTime->format(DateTime::ATOM);
+		return $this;
+	}
+
+	/**
+	 * @return null|DateTime
+	 */
+	public function getCustomerSpecifiedDeliveryDateTime(): ?DateTime
+	{
+		if ($this->customerSpecifiedDeliveryDateTime === null)
+		{
+			return null;
+		}
+		try
+		{
+			return new DateTime($this->customerSpecifiedDeliveryDateTime);
+		}
+		catch (Exception $oException)
+		{
+			return null;
+		}
+	}
+
+	/**
+	 * @param null|DateTime $customerSpecifiedDeliveryDateTime
+	 * @return ConsignmentRequestType
+	 */
+	public function setCustomerSpecifiedDeliveryDateTime(?DateTime $customerSpecifiedDeliveryDateTime = null): ConsignmentRequestType
+	{
+		if ($customerSpecifiedDeliveryDateTime === null)
+		{
+			$this->customerSpecifiedDeliveryDateTime = null;
+		}
+		else
+		{
+			$this->customerSpecifiedDeliveryDateTime = $customerSpecifiedDeliveryDateTime->format(DateTime::ATOM);
+		}
 		return $this;
 	}
 
@@ -175,6 +221,24 @@ class ConsignmentRequestType
 	public function setPackageGroups(?PackageGroupsRequestType $packageGroups = null): ConsignmentRequestType
 	{
 		$this->packageGroups = $packageGroups;
+		return $this;
+	}
+
+	/**
+	 * @return null|bool
+	 */
+	public function getGenerateQrCodes(): ?bool
+	{
+		return $this->generateQrCodes;
+	}
+
+	/**
+	 * @param null|bool $generateQrCodes
+	 * @return ConsignmentRequestType
+	 */
+	public function setGenerateQrCodes(?bool $generateQrCodes = null): ConsignmentRequestType
+	{
+		$this->generateQrCodes = $generateQrCodes;
 		return $this;
 	}
 

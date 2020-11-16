@@ -19,6 +19,11 @@ class DangerousGoodsRequestType
 	protected $weightInGrams;
 
 	/**
+	 * @var null|float $volumeInLitres
+	 */
+	protected $volumeInLitres;
+
+	/**
 	 * @var string $unNumber
 	 */
 	protected $unNumber;
@@ -100,6 +105,24 @@ class DangerousGoodsRequestType
 	public function setWeightInGrams(int $weightInGrams): DangerousGoodsRequestType
 	{
 		$this->weightInGrams = $weightInGrams;
+		return $this;
+	}
+
+	/**
+	 * @return null|float
+	 */
+	public function getVolumeInLitres(): ?float
+	{
+		return $this->volumeInLitres;
+	}
+
+	/**
+	 * @param null|float $volumeInLitres
+	 * @return DangerousGoodsRequestType
+	 */
+	public function setVolumeInLitres(?float $volumeInLitres = null): DangerousGoodsRequestType
+	{
+		$this->volumeInLitres = $volumeInLitres;
 		return $this;
 	}
 

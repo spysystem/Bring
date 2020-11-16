@@ -1,6 +1,7 @@
 <?php
 namespace Bring;
 
+
 /**
  * Class AdditionalServiceCodeType
  */
@@ -24,19 +25,12 @@ class AdditionalServiceCodeType
 	public const NON_FREEZE = 'NON_FREEZE';
 	public const _9 = '1142';
 	public const PHONENOTIFICATION = 'PHONENOTIFICATION';
-	public const _10 = '2401';
-	public const FRIGO_FROZEN = 'FRIGO_FROZEN';
-	public const _11 = '2402';
-	public const FRIGO_COOL = 'FRIGO_COOL';
-	public const _12 = '2404';
-	public const FRIGO_DRY = 'FRIGO_DRY';
-	public const _13 = '2405';
-	public const FRIGO_FISK = 'FRIGO_FISK';
-	public const _14 = '1245';
+	public const _10 = '1245';
 	public const DANGEROUS_GOODS = 'DANGEROUS_GOODS';
 	public const OX_EXPRESS = 'OX_EXPRESS';
 	public const ADVISERING = 'ADVISERING';
 	public const DELIVERY_INDOOR = 'DELIVERY_INDOOR';
 	public const FLEX_DELIVERY = 'FLEX_DELIVERY';
 	public const ENVELOPE = 'ENVELOPE';
+	public const _11 = '1073';
 }

@@ -1,13 +1,11 @@
 <?php
 namespace Bring;
 
-
 /**
  * Class packages
  */
 class packages
 {
-
 	/**
 	 * @var PackageResponseType|PackageResponseType[] $package
 	 */
@@ -38,5 +36,4 @@ class packages
 		$this->package = $package;
 		return $this;
 	}
-
 }

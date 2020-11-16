@@ -2,10 +2,22 @@
 	"name": "spysystem/bring",
 	"description": "PHP library for bring Web Services",
 	"license": "proprietary",
+	"repositories": [
+	{
+		"type": "composer",
+		"url": "https://repo.packagist.com/spysystem/"
+	},
+	{
+		"packagist.org": false
+	}
+],
 	"require": {
-		"php": ">=7.1",
+		"php": ">=7.4",
 		"ext-soap": "*"
-    },
+	},
+	"require-dev": {
+		"spysystem/soap-maker": "^2.0.0"
+	},
 	"autoload": {
 		"psr-4": {
 			"Bring\\": "src/"

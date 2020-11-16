@@ -39,6 +39,11 @@ class PartiesRequestType
 	protected $importer;
 
 	/**
+	 * @var null|PartyRequestType $returnTo
+	 */
+	protected $returnTo;
+
+	/**
 	 * @param PartyRequestType $sender
 	 * @param PartyRequestType $recipient
 	 */
@@ -153,6 +158,24 @@ class PartiesRequestType
 	public function setImporter(?PartyRequestType $importer = null): PartiesRequestType
 	{
 		$this->importer = $importer;
+		return $this;
+	}
+
+	/**
+	 * @return null|PartyRequestType
+	 */
+	public function getReturnTo(): ?PartyRequestType
+	{
+		return $this->returnTo;
+	}
+
+	/**
+	 * @param null|PartyRequestType $returnTo
+	 * @return PartiesRequestType
+	 */
+	public function setReturnTo(?PartyRequestType $returnTo = null): PartiesRequestType
+	{
+		$this->returnTo = $returnTo;
 		return $this;
 	}
 

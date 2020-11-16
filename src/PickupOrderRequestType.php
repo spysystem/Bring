@@ -33,6 +33,11 @@ class PickupOrderRequestType
 	protected $pickupIsReadyAtTime;
 
 	/**
+	 * @var null|string $pickupTimeZone
+	 */
+	protected $pickupTimeZone;
+
+	/**
 	 * @var parcelsInformation $parcelsInformation
 	 */
 	protected $parcelsInformation;
@@ -171,6 +176,24 @@ class PickupOrderRequestType
 	public function setPickupIsReadyAtTime(?string $pickupIsReadyAtTime = null): PickupOrderRequestType
 	{
 		$this->pickupIsReadyAtTime = $pickupIsReadyAtTime;
+		return $this;
+	}
+
+	/**
+	 * @return null|string
+	 */
+	public function getPickupTimeZone(): ?string
+	{
+		return $this->pickupTimeZone;
+	}
+
+	/**
+	 * @param null|string $pickupTimeZone
+	 * @return PickupOrderRequestType
+	 */
+	public function setPickupTimeZone(?string $pickupTimeZone = null): PickupOrderRequestType
+	{
+		$this->pickupTimeZone = $pickupTimeZone;
 		return $this;
 	}
 

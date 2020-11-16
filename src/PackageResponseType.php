@@ -14,6 +14,16 @@ class PackageResponseType
 	protected $packageNumber;
 
 	/**
+	 * @var null|string $labelFreeCode
+	 */
+	protected $labelFreeCode;
+
+	/**
+	 * @var null|string $qrCodeLink
+	 */
+	protected $qrCodeLink;
+
+	/**
 	 * @var string $correlationId
 	 */
 	protected $correlationId;
@@ -43,6 +53,42 @@ class PackageResponseType
 	public function setPackageNumber(string $packageNumber): PackageResponseType
 	{
 		$this->packageNumber = $packageNumber;
+		return $this;
+	}
+
+	/**
+	 * @return null|string
+	 */
+	public function getLabelFreeCode(): ?string
+	{
+		return $this->labelFreeCode;
+	}
+
+	/**
+	 * @param null|string $labelFreeCode
+	 * @return PackageResponseType
+	 */
+	public function setLabelFreeCode(?string $labelFreeCode = null): PackageResponseType
+	{
+		$this->labelFreeCode = $labelFreeCode;
+		return $this;
+	}
+
+	/**
+	 * @return null|string
+	 */
+	public function getQrCodeLink(): ?string
+	{
+		return $this->qrCodeLink;
+	}
+
+	/**
+	 * @param null|string $qrCodeLink
+	 * @return PackageResponseType
+	 */
+	public function setQrCodeLink(?string $qrCodeLink = null): PackageResponseType
+	{
+		$this->qrCodeLink = $qrCodeLink;
 		return $this;
 	}
 

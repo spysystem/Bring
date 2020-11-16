@@ -31,6 +31,11 @@ class PickupConfirmationType
 	protected $url;
 
 	/**
+	 * @var null|string $packageNumber
+	 */
+	protected $packageNumber;
+
+	/**
 	 * @param string $status
 	 * @param DateTime $earliestPickupDate
 	 */
@@ -138,6 +143,24 @@ class PickupConfirmationType
 	public function setUrl(?string $url = null): PickupConfirmationType
 	{
 		$this->url = $url;
+		return $this;
+	}
+
+	/**
+	 * @return null|string
+	 */
+	public function getPackageNumber(): ?string
+	{
+		return $this->packageNumber;
+	}
+
+	/**
+	 * @param null|string $packageNumber
+	 * @return PickupConfirmationType
+	 */
+	public function setPackageNumber(?string $packageNumber = null): PickupConfirmationType
+	{
+		$this->packageNumber = $packageNumber;
 		return $this;
 	}
 
