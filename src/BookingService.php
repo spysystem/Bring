@@ -34,6 +34,7 @@ class BookingService extends SoapClient
 		'ProductRequestType'				=> ProductRequestType::class,
 		'additionalServices'				=> additionalServices::class,
 		'ediCustomsDeclarations'			=> ediCustomsDeclarations::class,
+		'ReturnProductRequestType'			=> ReturnProductRequestType::class,
 		'ServicesRequestType'				=> ServicesRequestType::class,
 		'RecipientNotificationRequestType'	=> RecipientNotificationRequestType::class,
 		'CashOnDeliveryRequestType'			=> CashOnDeliveryRequestType::class,

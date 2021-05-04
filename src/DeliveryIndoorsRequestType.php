@@ -1,6 +1,7 @@
 <?php
 namespace Bring;
 
+
 /**
  * Class DeliveryIndoorsRequestType
  */

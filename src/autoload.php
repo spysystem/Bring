@@ -23,6 +23,7 @@ function autoload_65797fa19198960091bc2c17cfc008ff($class)
         'Bring\ProductRequestType' => __DIR__ .'/ProductRequestType.php',
         'Bring\additionalServices' => __DIR__ .'/additionalServices.php',
         'Bring\ediCustomsDeclarations' => __DIR__ .'/ediCustomsDeclarations.php',
+        'Bring\ReturnProductRequestType' => __DIR__ .'/ReturnProductRequestType.php',
         'Bring\ServicesRequestType' => __DIR__ .'/ServicesRequestType.php',
         'Bring\RecipientNotificationRequestType' => __DIR__ .'/RecipientNotificationRequestType.php',
         'Bring\CashOnDeliveryRequestType' => __DIR__ .'/CashOnDeliveryRequestType.php',

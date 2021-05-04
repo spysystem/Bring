@@ -79,7 +79,7 @@ class ediCustomsDeclarations
 	}
 
 	/**
-	 * @return string|null
+	 * @return string
 	 */
 	public function getVatOnEcommerce(): ?string
 	{

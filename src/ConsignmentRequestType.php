@@ -31,6 +31,11 @@ class ConsignmentRequestType
 	protected $product;
 
 	/**
+	 * @var null|ReturnProductRequestType $returnProduct
+	 */
+	protected $returnProduct;
+
+	/**
 	 * @var null|PurchaseOrderRequestType $purchaseOrder
 	 */
 	protected $purchaseOrder;
@@ -167,6 +172,24 @@ class ConsignmentRequestType
 	public function setProduct(ProductRequestType $product): ConsignmentRequestType
 	{
 		$this->product = $product;
+		return $this;
+	}
+
+	/**
+	 * @return null|ReturnProductRequestType
+	 */
+	public function getReturnProduct(): ?ReturnProductRequestType
+	{
+		return $this->returnProduct;
+	}
+
+	/**
+	 * @param null|ReturnProductRequestType $returnProduct
+	 * @return ConsignmentRequestType
+	 */
+	public function setReturnProduct(?ReturnProductRequestType $returnProduct = null): ConsignmentRequestType
+	{
+		$this->returnProduct = $returnProduct;
 		return $this;
 	}
 
